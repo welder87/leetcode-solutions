@@ -15,6 +15,10 @@ func TestSuccess2(t *testing.T) {
 	checkFunc(t, "", "y", []byte("y")[0])
 }
 
+func TestSuccess3(t *testing.T) {
+	checkFunc(t, "a", "aa", []byte("a")[0])
+}
+
 func checkFunc(t *testing.T, s1 string, s2 string, expected_result byte) {
 	result := findthedifference.FindTheDifference(s1, s2)
 	if !reflect.DeepEqual(expected_result, result) {
