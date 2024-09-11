@@ -1,10 +1,23 @@
 package sortsentence
 
 import (
+	"strconv"
 	"strings"
 )
 
 func SortSentence(s string) string {
+	sentence := strings.Split(s, " ")
+	source := make([]string, len(sentence))
+	for _, val := range sentence {
+		lastIndex := len(val) - 1
+		lastSymbol := string(val[lastIndex])
+		order, _ := strconv.Atoi(lastSymbol)
+		source[order-1] = val[:lastIndex]
+	}
+	return strings.Join(source, " ")
+}
+
+func SortSentence1(s string) string {
 	sentence := strings.Split(s, " ")
 	sentence = quickSort(sentence)
 	source := make([]string, 0, len(sentence))
