@@ -1,6 +1,38 @@
 package intersectiontwoarrays2
 
 func Intersect(nums1 []int, nums2 []int) []int {
+	numsWithCount := make(map[int]int)
+	first := &nums1
+	second := &nums2
+	if len(nums1) > len(nums2) {
+		first, second = &nums2, &nums1
+	}
+	for _, num := range *first {
+		if _, ok := numsWithCount[num]; ok {
+			numsWithCount[num]++
+		} else {
+			numsWithCount[num] = 1
+		}
+	}
+	vectorLength := len(nums1)
+	if len(nums1) > len(nums2) {
+		vectorLength = len(nums2)
+	}
+	result := make([]int, 0, vectorLength)
+	for _, num := range *second {
+		if count, ok := numsWithCount[num]; ok {
+			if count <= 1 {
+				delete(numsWithCount, num)
+			} else {
+				numsWithCount[num]--
+			}
+			result = append(result, num)
+		}
+	}
+	return result
+}
+
+func Intersect2(nums1 []int, nums2 []int) []int {
 	numsWithCount1 := make(map[int]int)
 	for _, num := range nums1 {
 		if _, ok := numsWithCount1[num]; ok {
