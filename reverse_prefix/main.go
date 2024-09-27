@@ -14,7 +14,6 @@ func ReversePrefix(word string, ch byte) string {
 	newString := make([]byte, len(word))
 	i := idx
 	j := idx + 1
-	n := 0
 	for {
 		leftOk := i >= 0
 		rightOk := j < len(word)
@@ -22,9 +21,8 @@ func ReversePrefix(word string, ch byte) string {
 			return string(newString)
 		}
 		if leftOk {
-			newString[n] = word[i]
+			newString[idx-i] = word[i]
 			i--
-			n++
 		}
 		if rightOk {
 			newString[j] = word[j]
