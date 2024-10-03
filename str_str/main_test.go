@@ -43,6 +43,10 @@ func TestSuccess9(t *testing.T) {
 	checkFunc(t, "abc", "c", 2)
 }
 
+func TestSuccess10(t *testing.T) {
+	checkFunc(t, "lililoslililas", "lilila", 7)
+}
+
 func checkFunc(t *testing.T, haystack string, needle string, expected_result int) {
 	result := strstr.StrStr(haystack, needle)
 	if !reflect.DeepEqual(expected_result, result) {
