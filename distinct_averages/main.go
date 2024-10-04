@@ -2,10 +2,16 @@ package distinctaverages
 
 func DistinctAverages(nums []int) int {
 	nums = quickSort(nums)
-	if len(nums) == 0 {
-		return 1
+	uniqueAverages := make(map[float64]struct{})
+	i := 0
+	j := len(nums) - 1
+	for i < j {
+		val := float64(nums[i]+nums[j]) / 2.0
+		uniqueAverages[val] = struct{}{}
+		i++
+		j--
 	}
-	return 1
+	return len(uniqueAverages)
 }
 
 func quickSort(nums []int) []int {

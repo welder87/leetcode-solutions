@@ -11,6 +11,10 @@ func TestSuccess1(t *testing.T) {
 	checkFunc(t, []int{4, 1, 4, 0, 3, 5}, 2)
 }
 
+func TestSuccess2(t *testing.T) {
+	checkFunc(t, []int{1, 100}, 1)
+}
+
 func checkFunc(t *testing.T, nums []int, expected_result int) {
 	result := distinctaverages.DistinctAverages(nums)
 	if !reflect.DeepEqual(expected_result, result) {
