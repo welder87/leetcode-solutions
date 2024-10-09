@@ -1,48 +1,58 @@
 package backspacecompare
 
-func BackspaceCompare(s string, t string) bool {
-	i := len(s) - 1
-	j := len(t) - 1
-	sharp := byte('#')
-	for i >= 0 || j >= 0 {
-		r1 := false
-		if i >= 0 {
-			r1 = s[i] == sharp
-		}
-		r2 := false
-		if j >= 0 {
-			r2 = t[j] == sharp
-		}
+import "errors"
 
-		if r1 {
-			counter := 1
-			i--
-			for i >= 0 && s[i] == sharp {
-				counter++
-				i--
-			}
-			i -= counter
+func BackspaceCompare(s string, t string) bool {
+	si1 := StringIterator{
+		index:  len(s) - 1,
+		str:    s,
+		offset: 0,
+	}
+	si2 := StringIterator{
+		index:  len(t) - 1,
+		str:    t,
+		offset: 0,
+	}
+	for {
+		val1, err1 := si1.GetNext()
+		val2, err2 := si2.GetNext()
+		if err1 != nil && err2 != nil {
+			return true
 		}
-		if r2 {
-			counter := 1
-			j--
-			for j >= 0 && t[j] == sharp {
-				counter++
-				j--
-			}
-			j -= counter
-		}
-		if r1 || r2 {
-			continue
-		}
-		if s[i] != t[j] {
+		if err1 == nil && err2 != nil || err2 == nil && err1 != nil {
 			return false
 		}
-		i--
-		j--
+		if val1 != val2 {
+			return false
+		}
 	}
-	if i < 0 && j < 0 {
-		return true
+}
+
+type StringIterator struct {
+	index  int
+	str    string
+	offset int
+}
+
+func (si *StringIterator) HasNext() bool {
+	return si.index >= 0
+}
+
+func (si *StringIterator) GetNext() (symbol byte, err error) {
+	sharp := byte('#')
+	for {
+		if si.HasNext() {
+			symbol := si.str[si.index]
+			si.index--
+			if symbol == sharp {
+				si.offset++
+			} else if si.offset > 0 {
+				si.offset--
+			} else if si.offset == 0 {
+				return symbol, nil
+			}
+		} else {
+			return byte(0), errors.New("end of string")
+		}
 	}
-	return false
 }
