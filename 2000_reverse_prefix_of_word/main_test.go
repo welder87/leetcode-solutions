@@ -1,7 +1,7 @@
 package problem2000
 
 import (
-	"reflect"
+	"fmt"
 	"testing"
 )
 
@@ -13,26 +13,12 @@ func TestReversePrefixV1(t *testing.T) {
 	testReversePrefix(t, ReversePrefixV1)
 }
 
-type fn func(string, byte) string
-
 func testReversePrefix(t *testing.T, function fn) {
-	for _, testCase := range getTestCases() {
-		result := function(testCase.word, testCase.ch)
-		t.Logf("Calling ReversePrefix(%v, %v)", testCase.word, string(testCase.ch))
-		if !reflect.DeepEqual(testCase.expectedWord, result) {
-			t.Errorf("Expected element type: %v, got: %v", testCase.expectedWord, result)
-		}
-	}
-}
-
-type testCase struct {
-	word         string
-	ch           byte
-	expectedWord string
-}
-
-func getTestCases() []testCase {
-	return []testCase{
+	testCases := []struct {
+		word         string
+		ch           byte
+		expectedWord string
+	}{
 		{
 			word:         "abcdefd",
 			ch:           byte('d'),
@@ -74,4 +60,15 @@ func getTestCases() []testCase {
 			expectedWord: "",
 		},
 	}
+	for _, testCase := range testCases {
+		testName := fmt.Sprintf("%v %v", testCase.word, testCase.ch)
+		t.Run(testName, func(t *testing.T) {
+			ans := function(testCase.word, testCase.ch)
+			if testCase.expectedWord != ans {
+				t.Errorf("got %v, want %v", ans, testCase.expectedWord)
+			}
+		})
+	}
 }
+
+type fn func(string, byte) string
