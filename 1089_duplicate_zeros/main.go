@@ -6,20 +6,29 @@ func DuplicateZeros(arr []int) {
 	}
 	i := 0
 	counter := 0
-	for counter < len(arr) {
+	isFirst := false
+	for {
 		if arr[i] == 0 {
+			if counter+1 == len(arr) {
+				isFirst = true
+				break
+			}
 			counter += 2
 		} else {
 			counter++
 		}
-		i++
+		if counter >= len(arr) {
+			break
+		} else {
+			i++
+		}
 	}
 	if i == len(arr)-1 {
 		return
 	}
 	j := len(arr) - 1
 	for i < j && i >= 0 {
-		if arr[i] == 0 {
+		if arr[i] == 0 && !isFirst {
 			for k := 0; k < 2; k++ {
 				arr[j] = 0
 				j--
@@ -30,5 +39,6 @@ func DuplicateZeros(arr []int) {
 			i--
 			j--
 		}
+		isFirst = false
 	}
 }
