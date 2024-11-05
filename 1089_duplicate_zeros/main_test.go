@@ -1,6 +1,7 @@
 package problem1086
 
 import (
+	"fmt"
 	"reflect"
 	"testing"
 )
@@ -40,10 +41,12 @@ func TestDuplicateZeros(t *testing.T) {
 		},
 	}
 	for _, testCase := range testCases {
-		t.Logf("Calling DuplicateZeros(%v)", testCase.nums)
-		DuplicateZeros(testCase.nums)
-		if !reflect.DeepEqual(testCase.expectedNums, testCase.nums) {
-			t.Errorf("Expected element type: %v, got: %v", testCase.expectedNums, testCase.nums)
-		}
+		testName := fmt.Sprintf("%v", testCase.nums)
+		t.Run(testName, func(t *testing.T) {
+			DuplicateZeros(testCase.nums)
+			if !reflect.DeepEqual(testCase.expectedNums, testCase.nums) {
+				t.Errorf("got %v, want %v", testCase.nums, testCase.expectedNums)
+			}
+		})
 	}
 }
