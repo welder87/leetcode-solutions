@@ -21,7 +21,7 @@ func TestIsPrefixString(t *testing.T) {
 	for _, testCase := range testCases {
 		testName := fmt.Sprintf("%v %v", testCase.s, testCase.words)
 		t.Run(testName, func(t *testing.T) {
-			ans := IsPrefixString(testCase.s, testCase.words)
+			ans := isPrefixString(testCase.s, testCase.words)
 			if ans != testCase.want {
 				t.Errorf("got %v, want %v", ans, testCase.want)
 			}
