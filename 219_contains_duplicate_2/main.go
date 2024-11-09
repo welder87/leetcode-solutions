@@ -39,3 +39,17 @@ func containsNearbyDuplicateV1(nums []int, k int) bool {
 	}
 	return false
 }
+
+func containsNearbyDuplicateV2(nums []int, k int) bool {
+	if len(nums) == 0 || len(nums) == 1 {
+		return false
+	}
+	counter := make(map[int]int)
+	for idx, val := range nums {
+		if oldIdx, ok := counter[val]; ok && (idx-oldIdx) <= k {
+			return true
+		}
+		counter[val] = idx
+	}
+	return false
+}

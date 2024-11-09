@@ -14,6 +14,10 @@ func TestContainsNearbyDuplicateV1(t *testing.T) {
 	testContainsNearbyDuplicate(t, containsNearbyDuplicateV1)
 }
 
+func TestContainsNearbyDuplicateV2(t *testing.T) {
+	testContainsNearbyDuplicate(t, containsNearbyDuplicateV2)
+}
+
 func testContainsNearbyDuplicate(t *testing.T, function fn) {
 	testCases := []struct {
 		nums        []int
