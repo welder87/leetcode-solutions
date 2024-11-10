@@ -1,8 +1,8 @@
-package distinctaverages
+package problem2465
 
-func DistinctAverages(nums []int) int {
+func distinctAverages(nums []int) int {
 	nums = quickSort(nums)
-	uniqueAverages := make(map[float64]struct{})
+	uniqueAverages := make(map[float64]struct{}, len(nums))
 	i := 0
 	j := len(nums) - 1
 	for i < j {
