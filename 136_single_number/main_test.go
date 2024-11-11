@@ -9,6 +9,10 @@ func TestSingleNumber(t *testing.T) {
 	testSingleNumber(t, singleNumber)
 }
 
+func TestSingleNumberV1(t *testing.T) {
+	testSingleNumber(t, singleNumberV1)
+}
+
 func testSingleNumber(t *testing.T, function fn) {
 	testCases := []struct {
 		nums []int
