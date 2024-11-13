@@ -26,6 +26,22 @@ func TestIsSymmetric(t *testing.T) {
 			},
 			ans: false,
 		},
+		{
+			root: &TreeNode{
+				Val: 2,
+				Left: &TreeNode{
+					Val:   3,
+					Left:  &TreeNode{Val: 4},
+					Right: &TreeNode{Val: 5, Left: &TreeNode{Val: 8}, Right: &TreeNode{Val: 9}},
+				},
+				Right: &TreeNode{
+					Val:   3,
+					Left:  &TreeNode{Val: 5, Left: &TreeNode{Val: 9}, Right: &TreeNode{Val: 8}},
+					Right: &TreeNode{Val: 4},
+				},
+			},
+			ans: true,
+		},
 	}
 
 	for _, testCase := range testCases {
