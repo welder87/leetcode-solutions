@@ -9,6 +9,10 @@ func TestMajorityElement(t *testing.T) {
 	testMajorityElement(t, majorityElement)
 }
 
+func TestMajorityElementV1(t *testing.T) {
+	testMajorityElement(t, majorityElementV1)
+}
+
 func testMajorityElement(t *testing.T, function fn) {
 	testCases := []struct {
 		nums []int

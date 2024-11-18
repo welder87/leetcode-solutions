@@ -14,3 +14,20 @@ func majorityElement(nums []int) int {
 	}
 	return elem
 }
+
+// The solution uses the Moore Voting Algorithm
+func majorityElementV1(nums []int) int {
+	counter := 0
+	elem := 0
+	for _, num := range nums {
+		if counter == 0 {
+			elem = num
+			counter++
+		} else if elem == num {
+			counter++
+		} else {
+			counter--
+		}
+	}
+	return elem
+}
