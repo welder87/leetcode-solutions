@@ -1,6 +1,6 @@
-package removeelement
+package problem27
 
-func RemoveElement(nums []int, val int) int {
+func removeElement(nums []int, val int) int {
 	i := 0
 	j := len(nums) - 1
 	for i <= j {
