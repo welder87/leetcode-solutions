@@ -6,6 +6,14 @@ import (
 )
 
 func TestPivotIndex(t *testing.T) {
+	testPivotIndex(t, pivotIndex)
+}
+
+func TestPivotIndexV1(t *testing.T) {
+	testPivotIndex(t, pivotIndexV1)
+}
+
+func testPivotIndex(t *testing.T, function fn) {
 	testCases := []struct {
 		nums []int
 		ans  int
@@ -42,10 +50,12 @@ func TestPivotIndex(t *testing.T) {
 	for _, testCase := range testCases {
 		testName := fmt.Sprintf("%v", testCase.nums)
 		t.Run(testName, func(t *testing.T) {
-			ans := pivotIndex(testCase.nums)
+			ans := function(testCase.nums)
 			if testCase.ans != ans {
 				t.Errorf("got %v, want %v", ans, testCase.ans)
 			}
 		})
 	}
 }
+
+type fn func([]int) int

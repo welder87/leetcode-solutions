@@ -14,3 +14,19 @@ func pivotIndex(nums []int) int {
 	}
 	return -1
 }
+
+func pivotIndexV1(nums []int) int {
+	leftSum := 0
+	rightSum := 0
+	for _, num := range nums {
+		rightSum += num
+	}
+	for idx, num := range nums {
+		rightSum -= num
+		if leftSum == rightSum {
+			return idx
+		}
+		leftSum += num
+	}
+	return -1
+}
