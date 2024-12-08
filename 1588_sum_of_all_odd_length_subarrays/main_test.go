@@ -9,6 +9,10 @@ func TestSumOddLengthSubarrays(t *testing.T) {
 	testSumOddLengthSubarrays(t, sumOddLengthSubarrays)
 }
 
+func TestSumOddLengthSubarraysV1(t *testing.T) {
+	testSumOddLengthSubarrays(t, sumOddLengthSubarraysV1)
+}
+
 func testSumOddLengthSubarrays(t *testing.T, function fn) {
 	testCases := []struct {
 		s   []int
