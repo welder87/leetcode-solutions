@@ -1,5 +1,7 @@
 package problem645
 
+import "sort"
+
 func findErrorNums(nums []int) []int {
 	temp := make(map[int]int)
 	for _, num := range nums {
@@ -15,5 +17,24 @@ func findErrorNums(nums []int) []int {
 			result[1] = i
 		}
 	}
+	return result
+}
+
+func findErrorNumsV1(nums []int) []int {
+	sort.Ints(nums)
+	result := []int{-1, -1}
+	sum1 := 0
+	sum2 := nums[0]
+	i := 1
+	for i < len(nums) {
+		if nums[i]-nums[i-1] == 0 {
+			result[0] = nums[i]
+		}
+		sum1 += i
+		sum2 += nums[i]
+		i++
+	}
+	sum1 += i
+	result[1] = (sum1 - sum2) + result[0]
 	return result
 }

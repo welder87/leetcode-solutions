@@ -10,6 +10,10 @@ func TestFindMaxAverage(t *testing.T) {
 	testFindMaxAverage(t, findErrorNums)
 }
 
+func TestFindMaxAverageV1(t *testing.T) {
+	testFindMaxAverage(t, findErrorNumsV1)
+}
+
 func testFindMaxAverage(t *testing.T, function fn) {
 	testCases := []struct {
 		nums []int
@@ -34,6 +38,30 @@ func testFindMaxAverage(t *testing.T, function fn) {
 		{
 			nums: []int{1, 2, 8, 4, 5, 6, 7, 8},
 			ans:  []int{8, 3},
+		},
+		{
+			nums: []int{1, 2, 3, 4, 5, 6, 8, 8},
+			ans:  []int{8, 7},
+		},
+		{
+			nums: []int{8, 2, 4, 3, 7, 6, 5, 8},
+			ans:  []int{8, 1},
+		},
+		{
+			nums: []int{3, 2, 2},
+			ans:  []int{2, 1},
+		},
+		{
+			nums: []int{1, 7, 8, 4, 5, 6, 2, 8},
+			ans:  []int{8, 3},
+		},
+		{
+			nums: []int{3, 3, 2},
+			ans:  []int{3, 1},
+		},
+		{
+			nums: []int{3, 2, 1, 2},
+			ans:  []int{2, 4},
 		},
 	}
 	for _, testCase := range testCases {
