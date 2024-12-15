@@ -38,3 +38,23 @@ func findErrorNumsV1(nums []int) []int {
 	result[1] = (sum1 - sum2) + result[0]
 	return result
 }
+
+func findErrorNumsV2(nums []int) []int {
+	sum1 := 0
+	sum2 := 0
+	isDuplicate := make([]bool, len(nums))
+	duplicate := 0
+	for _, num := range nums {
+		idx := num - 1
+		if isDuplicate[idx] {
+			duplicate = num
+		} else {
+			isDuplicate[idx] = true
+		}
+		sum2 += num
+	}
+	for i := 1; i <= len(nums); i++ {
+		sum1 += i
+	}
+	return []int{duplicate, (sum1 - sum2) + duplicate}
+}

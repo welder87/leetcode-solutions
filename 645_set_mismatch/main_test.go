@@ -14,6 +14,10 @@ func TestFindMaxAverageV1(t *testing.T) {
 	testFindMaxAverage(t, findErrorNumsV1)
 }
 
+func TestFindMaxAverageV2(t *testing.T) {
+	testFindMaxAverage(t, findErrorNumsV2)
+}
+
 func testFindMaxAverage(t *testing.T, function fn) {
 	testCases := []struct {
 		nums []int
