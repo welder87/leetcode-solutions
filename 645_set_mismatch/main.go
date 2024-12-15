@@ -44,17 +44,16 @@ func findErrorNumsV2(nums []int) []int {
 	sum2 := 0
 	isDuplicate := make([]bool, len(nums))
 	duplicate := 0
-	for _, num := range nums {
-		idx := num - 1
-		if isDuplicate[idx] {
+	for idx, num := range nums {
+		numIdx := num - 1
+		if isDuplicate[numIdx] {
 			duplicate = num
 		} else {
-			isDuplicate[idx] = true
+			isDuplicate[numIdx] = true
 		}
+		sum1 += idx
 		sum2 += num
 	}
-	for i := 1; i <= len(nums); i++ {
-		sum1 += i
-	}
+	sum1 += len(nums)
 	return []int{duplicate, (sum1 - sum2) + duplicate}
 }
