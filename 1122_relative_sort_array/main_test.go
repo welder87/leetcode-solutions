@@ -10,6 +10,10 @@ func TestRelativeSortArray(t *testing.T) {
 	testRelativeSortArray(t, relativeSortArray)
 }
 
+func TestRelativeSortArrayV1(t *testing.T) {
+	testRelativeSortArray(t, relativeSortArrayV1)
+}
+
 func testRelativeSortArray(t *testing.T, function fn) {
 	testCases := []struct {
 		arr1 []int
