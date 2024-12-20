@@ -14,6 +14,10 @@ func TestSortArrayV1(t *testing.T) {
 	testSortArray(t, sortArrayV1)
 }
 
+func TestSortArrayV2(t *testing.T) {
+	testSortArray(t, sortArrayV2)
+}
+
 func testSortArray(t *testing.T, function fn) {
 	testCases := []struct {
 		name []int

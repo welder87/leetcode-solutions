@@ -61,3 +61,30 @@ func absNum(num int) int {
 	}
 	return num
 }
+
+// Quick sort (time complexity O(n log n), space complexity O(1))
+func sortArrayV2(nums []int) []int {
+	subSortArray(nums, 0, len(nums)-1)
+	return nums
+}
+
+func subSortArray(nums []int, p int, r int) {
+	if p < r {
+		q := partition(nums, p, r)
+		subSortArray(nums, p, q-1)
+		subSortArray(nums, q+1, r)
+	}
+}
+
+func partition(nums []int, p int, pivotIndex int) int {
+	pivot := nums[pivotIndex]
+	i := p - 1
+	for j := p; j < pivotIndex; j++ {
+		if nums[j] <= pivot {
+			i++
+			nums[i], nums[j] = nums[j], nums[i]
+		}
+	}
+	nums[i+1], nums[pivotIndex] = nums[pivotIndex], nums[i+1]
+	return i + 1
+}
