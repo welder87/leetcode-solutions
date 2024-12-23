@@ -7,6 +7,14 @@ import (
 )
 
 func TestSearchInsert(t *testing.T) {
+	testSearchInsert(t, searchInsert)
+}
+
+func TestSearchInsertV1(t *testing.T) {
+	testSearchInsert(t, searchInsertV1)
+}
+
+func testSearchInsert(t *testing.T, function fn) {
 	testCases := []struct {
 		nums   []int
 		target int
@@ -46,10 +54,12 @@ func TestSearchInsert(t *testing.T) {
 	for _, testCase := range testCases {
 		testName := fmt.Sprintf("%v %v", testCase.nums, testCase.target)
 		t.Run(testName, func(t *testing.T) {
-			ans := searchInsert(testCase.nums, testCase.target)
+			ans := function(testCase.nums, testCase.target)
 			if !reflect.DeepEqual(testCase.ans, ans) {
 				t.Errorf("got %v, want %v", ans, testCase.ans)
 			}
 		})
 	}
 }
+
+type fn func([]int, int) int
