@@ -28,9 +28,14 @@ func TestSearch(t *testing.T) {
 			ans:    0,
 		},
 		{
-			nums:   []int{},
+			nums:   []int{1},
 			target: 25,
 			ans:    -1,
+		},
+		{
+			nums:   []int{2, 4, 5, 6, 7, 0, 1},
+			target: 0,
+			ans:    5,
 		},
 	}
 	for _, testCase := range testCases {
