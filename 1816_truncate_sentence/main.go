@@ -1,8 +1,8 @@
-package truncatesentence
+package problem1816
 
 import "strings"
 
-func TruncateSentence(s string, k int) string {
+func truncateSentence(s string, k int) string {
 	arr := strings.Split(s, " ")
 	new_arr := []string{}
 	for idx, sym := range arr {
