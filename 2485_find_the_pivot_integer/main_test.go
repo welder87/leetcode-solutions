@@ -9,6 +9,10 @@ func TestPivotInteger(t *testing.T) {
 	testPivotInteger(t, pivotInteger)
 }
 
+func TestPivotIntegerV1(t *testing.T) {
+	testPivotInteger(t, pivotIntegerV1)
+}
+
 func testPivotInteger(t *testing.T, function fn) {
 	testCases := []struct {
 		n   int
