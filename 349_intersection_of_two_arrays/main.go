@@ -1,17 +1,11 @@
 package problem349
 
 func intersection(nums1 []int, nums2 []int) []int {
-	hashMap := make(map[int]struct{})
+	hashMap := make(map[int]struct{}, len(nums1) + len(nums2))
 	for _, num := range nums1 {
-		if val, ok := hashMap[num]; !ok {
-			hashMap[num] = val
-		}
+		hashMap[num] = struct{}{}
 	}
-	vectorLength := len(nums1)
-	if len(nums1) > len(nums2) {
-		vectorLength = len(nums2)
-	}
-	vector := make([]int, 0, vectorLength)
+	vector := make([]int, 0, max(len(nums2), len(nums2)))
 	for _, num := range nums2 {
 		if _, ok := hashMap[num]; ok {
 			vector = append(vector, num)
