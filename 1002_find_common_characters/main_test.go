@@ -7,6 +7,14 @@ import (
 )
 
 func TestCommonChars(t *testing.T) {
+	testCommonChars(t, commonChars)
+}
+
+func TestCommonCharsV1(t *testing.T) {
+	testCommonChars(t, commonCharsV1)
+}
+
+func testCommonChars(t *testing.T, function fn) {
 	testCases := []struct {
 		words []string
 		ans   [][]string
@@ -20,7 +28,7 @@ func TestCommonChars(t *testing.T) {
 	for _, testCase := range testCases {
 		testName := fmt.Sprintf("%v", testCase.words)
 		t.Run(testName, func(t *testing.T) {
-			ans := commonChars(testCase.words)
+			ans := function(testCase.words)
 			if len(testCase.ans) == 0 {
 				if len(ans) != 0 {
 					t.Errorf("got %v, want %v", ans, testCase.ans)
@@ -40,3 +48,5 @@ func TestCommonChars(t *testing.T) {
 		})
 	}
 }
+
+type fn func([]string) []string

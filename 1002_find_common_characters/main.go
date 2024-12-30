@@ -31,3 +31,31 @@ func commonChars(words []string) []string {
 	}
 	return result
 }
+
+func commonCharsV1(words []string) []string {
+	wordCount := len(words)
+	mainCounter := make(map[byte]int, len(words[0]))
+	for j := 0; j < len(words[0]); j++ {
+		mainCounter[words[0][j]]++
+	}
+	for i := 1; i < wordCount; i++ {
+		counter := make(map[byte]int, len(words[i]))
+		for j := 0; j < len(words[i]); j++ {
+			counter[words[i][j]]++
+		}
+		for symbol, mainCnt := range mainCounter {
+			if cnt, ok := counter[symbol]; ok {
+				mainCounter[symbol] = min(mainCnt, cnt)
+			} else {
+				mainCounter[symbol] = 0
+			}
+		}
+	}
+	result := make([]string, 0, len(words[0]))
+	for symbol, cnt := range mainCounter {
+		for i := 0; i < cnt; i++ {
+			result = append(result, string(symbol))
+		}
+	}
+	return result
+}
