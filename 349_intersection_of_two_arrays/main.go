@@ -1,6 +1,6 @@
-package intersectiontwoarrays
+package problem349
 
-func Intersection(nums1 []int, nums2 []int) []int {
+func intersection(nums1 []int, nums2 []int) []int {
 	hashMap := make(map[int]struct{})
 	for _, num := range nums1 {
 		if val, ok := hashMap[num]; !ok {
@@ -21,7 +21,7 @@ func Intersection(nums1 []int, nums2 []int) []int {
 	return vector
 }
 
-func Intersection1(nums1 []int, nums2 []int) []int {
+func intersectionV1(nums1 []int, nums2 []int) []int {
 	map1 := make(map[int]struct{})
 	for _, num := range nums1 {
 		if val, ok := map1[num]; !ok {
