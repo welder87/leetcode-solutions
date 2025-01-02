@@ -1,6 +1,6 @@
-package finddifference
+package problem2215
 
-func FindDifference(nums1 []int, nums2 []int) [][]int {
+func findDifference(nums1 []int, nums2 []int) [][]int {
 	uniqueNums1 := make(map[int]struct{}, len(nums1))
 	for _, num := range nums1 {
 		if _, ok := uniqueNums1[num]; !ok {
