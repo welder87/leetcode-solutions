@@ -10,6 +10,10 @@ func TestIntersection(t *testing.T) {
 	testIntersection(t, intersection)
 }
 
+func TestIntersectionV1(t *testing.T) {
+	testIntersection(t, intersectionV1)
+}
+
 func testIntersection(t *testing.T, fucntion fn) {
 	testCases := []struct {
 		nums [][]int
