@@ -9,6 +9,10 @@ func TestGetCommon(t *testing.T) {
 	testGetCommon(t, getCommon)
 }
 
+func TestGetCommonV1(t *testing.T) {
+	testGetCommon(t, getCommonV1)
+}
+
 func testGetCommon(t *testing.T, function fn) {
 	testCases := []struct {
 		nums1 []int
