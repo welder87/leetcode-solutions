@@ -35,6 +35,17 @@ func testTwoSum(t *testing.T, function fn) {
 			target: 6,
 			ans:    []int{0, 1},
 		},
+		// yandex algorithms interview
+		{
+			nums:   []int{1, -2, 4, 7, 3},
+			target: 5,
+			ans:    []int{0, 2},
+		},
+		{
+			nums:   []int{0, 2, -4, 4, 6, 11, -7},
+			target: 7,
+			ans:    []int{2, 5},
+		},
 	}
 	for _, testCase := range testCases {
 		testName := fmt.Sprintf("%v %v", testCase.nums, testCase.target)
