@@ -197,5 +197,5 @@ go.work.sum
 # env file
 .env
 
-pythonsolution/.vscode
-golangsolution/.vscode
+python_solutions/.vscode
+golang_solutions/.vscode
