@@ -31,6 +31,10 @@ def test_success_v0(nums: list[int], ans: list[list[int]], solution: Solution):
     assert solution.sortArrayByParityII(nums) in ans
 
 
+@pytest.mark.parametrize(("nums", "ans"), test_cases)
+def test_success_v1(nums: list[int], ans: list[list[int]], solution: Solution):
+    assert solution.sortArrayByParityIIV1(nums) in ans
+
 @pytest.fixture
 def solution() -> Solution:
     return Solution()
