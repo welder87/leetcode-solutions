@@ -7,6 +7,7 @@ test_cases = (
     # preset cases
     ([-5, 1, 5, 0, -7], 1),
     ([-4, -3, -2, -1, 4, 3, 2], 0),
+    ([-4, -3, -2, -1], 0),
     # common cases
     # corner cases
     ([0], 0),
@@ -17,6 +18,11 @@ test_cases = (
 @pytest.mark.parametrize(("nums", "ans"), test_cases)
 def test_success_v0(nums: list[int], ans: int, solution: Solution):
     assert ans == solution.largestAltitude(nums)
+
+
+@pytest.mark.parametrize(("nums", "ans"), test_cases)
+def test_success_v1(nums: list[int], ans: int, solution: Solution):
+    assert ans == solution.largestAltitudeV1(nums)
 
 
 @pytest.fixture
