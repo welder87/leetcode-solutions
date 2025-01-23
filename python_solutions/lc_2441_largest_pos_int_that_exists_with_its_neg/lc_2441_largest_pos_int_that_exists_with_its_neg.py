@@ -1,3 +1,6 @@
+from collections import defaultdict
+
+
 class Solution:
     def findMaxK(self, nums: list[int]) -> int:
         maxs = -1
@@ -7,4 +10,14 @@ class Solution:
                     continue
                 if (val := abs(nums[i])) == abs(nums[j]) and maxs < val:
                     maxs = val
+        return maxs
+
+    def findMaxKV1(self, nums: list[int]) -> int:
+        pos_nums = {num for num in nums if num > 0}
+        if not pos_nums:
+            return -1
+        maxs = -1
+        for num in nums:
+            if num < 0 and (val := abs(num)) in pos_nums and maxs < val:
+                maxs = val
         return maxs
