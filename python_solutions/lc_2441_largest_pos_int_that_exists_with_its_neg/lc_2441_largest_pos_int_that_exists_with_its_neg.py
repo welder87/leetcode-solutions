@@ -21,3 +21,16 @@ class Solution:
             if num < 0 and (val := abs(num)) in pos_nums and maxs < val:
                 maxs = val
         return maxs
+
+    def findMaxKV2(self, nums: list[int]) -> int:
+        nums.sort()
+        i, j = 0, len(nums) - 1
+        while nums[i] < 0 and nums[j] > 0:
+            val1, val2 = -nums[i], nums[j]
+            if val1 == val2:
+                return val2
+            elif val1 > val2:
+                i += 1
+            else:
+                j -= 1
+        return -1

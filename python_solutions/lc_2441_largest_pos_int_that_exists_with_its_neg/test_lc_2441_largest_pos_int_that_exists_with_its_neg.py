@@ -30,6 +30,11 @@ def test_success_v1(nums: list[int], ans: int, solution: Solution):
     assert ans == solution.findMaxKV1(nums)
 
 
+@pytest.mark.parametrize(("nums", "ans"), test_cases)
+def test_success_v2(nums: list[int], ans: int, solution: Solution):
+    assert ans == solution.findMaxKV2(nums)
+
+
 @pytest.fixture
 def solution() -> Solution:
     return Solution()
