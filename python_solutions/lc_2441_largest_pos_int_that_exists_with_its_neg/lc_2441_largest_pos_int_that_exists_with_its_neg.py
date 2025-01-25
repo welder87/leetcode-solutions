@@ -1,6 +1,3 @@
-from collections import defaultdict
-
-
 class Solution:
     def findMaxK(self, nums: list[int]) -> int:
         maxs = -1
