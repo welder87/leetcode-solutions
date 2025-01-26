@@ -24,6 +24,11 @@ def test_success_v0(arr: list[int], ans: bool, solution: Solution):
     assert ans == solution.uniqueOccurrences(arr)
 
 
+@pytest.mark.parametrize(("arr", "ans"), test_cases)
+def test_success_v1(arr: list[int], ans: bool, solution: Solution):
+    assert ans == solution.uniqueOccurrencesV1(arr)
+
+
 @pytest.fixture
 def solution() -> Solution:
     return Solution()
