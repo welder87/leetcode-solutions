@@ -7,7 +7,17 @@ import (
 	"testing"
 )
 
-func TestIsValid(t *testing.T) {
+type fn func([]int, int) int
+
+func TestRemoveElement(t *testing.T) {
+	tesRemoveElement(t, removeElement)
+}
+
+func TestRemoveElementV1(t *testing.T) {
+	tesRemoveElement(t, removeElementV1)
+}
+
+func tesRemoveElement(t *testing.T, function fn) {
 	testCases := []struct {
 		nums         []int
 		val          int
