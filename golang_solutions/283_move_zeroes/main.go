@@ -1,6 +1,6 @@
-package movezeroes
+package problem283
 
-func MoveZeroes(nums []int) {
+func moveZeroes(nums []int) {
 	if len(nums) <= 1 {
 		return
 	}
