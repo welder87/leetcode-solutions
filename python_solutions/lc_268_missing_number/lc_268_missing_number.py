@@ -22,3 +22,9 @@ class Solution:
             if length == num or num != nums[num]:
                 return num
         return -1
+
+    def missingNumberV3(self, nums: list[int]) -> int:
+        # Time complexity: O(2n). Space complexity: O(1).
+        current = sum(nums)
+        reference = sum(num for num in range(len(nums) + 1))
+        return abs(reference - current)
