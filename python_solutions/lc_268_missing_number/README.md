@@ -45,3 +45,19 @@ Could you implement a solution using only `O(1)` extra space complexity and `O(n
 * `Binary Search`
 * `Bit Manipulation`
 * `Sorting`
+
+## Similar Questions
+
+Easy
+
+* [136. Single Number](../lc_136_single_number/README.md)
+
+Medium
+
+* [287. Find the Duplicate Number](../lc_287_find_the_duplicate_number/README.md)
+* [1980. Find Unique Binary String]()
+
+Hard
+
+* [41. First Missing Positive]()
+* [765. Couples Holding Hands]()
