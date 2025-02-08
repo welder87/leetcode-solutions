@@ -1,6 +1,6 @@
 class Solution:
     def missingNumber(self, nums: list[int]) -> int:
-        # Time complexity: O(n^2). Space complexity: O(m).
+        # Time complexity: O(n^2). Space complexity: O(1).
         for num in range(len(nums) + 1):
             if num not in nums:
                 return num
@@ -28,3 +28,13 @@ class Solution:
         current = sum(nums)
         reference = sum(num for num in range(len(nums) + 1))
         return abs(reference - current)
+
+    def missingNumberV4(self, nums: list[int]) -> int:
+        # Time complexity: O(2n). Space complexity: O(1).
+        current = 0
+        for num in nums:
+            current ^= num
+        reference = 0
+        for num in range(len(nums) + 1):
+            reference ^= num
+        return current ^ reference
