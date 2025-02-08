@@ -25,3 +25,15 @@ class Solution:
             elif cnt == 0:
                 reference = num
         return [repeat, reference]
+
+    def findErrorNumsV2(self, nums: list[int]) -> list[int]:
+        # Time complexity: O(n log n + 2 n + 1). Space complexity: O(n log n).
+        nums.sort()
+        reference, repeat = None, None
+        sum_with_repeat, reference_sum = sum(nums), 0
+        for idx in range(1, len(nums) + 1):
+            if repeat is None and nums[idx] == nums[idx - 1]:
+                repeat = nums[idx]
+            reference_sum += idx
+        reference = reference_sum - (sum_with_repeat - repeat)
+        return [repeat, reference]
