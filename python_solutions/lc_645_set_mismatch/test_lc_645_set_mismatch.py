@@ -36,6 +36,16 @@ def test_success_v2(nums: list[int], ans: list[int], solution: Solution):
     assert solution.findErrorNumsV2(nums) == ans
 
 
+@pytest.mark.parametrize(("nums", "ans"), test_cases)
+def test_success_v3(nums: list[int], ans: list[int], solution: Solution):
+    assert solution.findErrorNumsV3(nums) == ans
+
+
+@pytest.mark.parametrize(("nums", "ans"), test_cases)
+def test_success_v4(nums: list[int], ans: list[int], solution: Solution):
+    assert solution.findErrorNumsV4(nums) == ans
+
+
 @pytest.fixture
 def solution() -> Solution:
     return Solution()
