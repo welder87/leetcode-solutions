@@ -47,7 +47,7 @@ We start from the altitude `0` and we have a list of N integers, where each inte
 
 This can be solved by taking the maximum altitudes at each step in the journey. The altitude at a step can be determined as the altitude at the previous step plus the gain at the current step. Hence, we will start from `0` and keep adding the gain in altitude to it at each step, and after each addition, we will update the maximum altitude we have seen so far.
 
-![fig](img/1732A.png)
+![fig](img/1732_find_the_highest_altitude_1732A.png)
 
 If we observe closely, the altitude at a point is the sum of gains on the left of it, which is nothing but the prefix sum at this index. Therefore, we can find the prefix sum and return the maximum as the highest reached altitude.
 

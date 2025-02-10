@@ -123,10 +123,10 @@ This is similar to the classic two sum problem, but with the added constraint th
 
 The following is an illustration demonstrating the two pointer approach:
 
-![Current1](img/1.png)
-![Current2](img/2.png)
-![Current3](img/3.png)
-![Current4](img/4.png)
+![Current1](img/2441_largest_pos_int_that_exists_with_its_neg_1.png)
+![Current2](img/2441_largest_pos_int_that_exists_with_its_neg_2.png)
+![Current3](img/2441_largest_pos_int_that_exists_with_its_neg_3.png)
+![Current4](img/2441_largest_pos_int_that_exists_with_its_neg_4.png)
 
 #### Algorithm
 
@@ -241,11 +241,11 @@ However, we can optimize this process to achieve the same goal with just a singl
 
 The following is an illustration demonstrating the one pass hash set approach:
 
-![Current1](img/1-1.png)
-![Current2](img/1-2.png)
-![Current3](img/1-3.png)
-![Current4](img/1-4.png)
-![Current5](img/1-5.png)
+![Current1](img/2441_largest_pos_int_that_exists_with_its_neg_1-1.png)
+![Current2](img/2441_largest_pos_int_that_exists_with_its_neg_1-2.png)
+![Current3](img/2441_largest_pos_int_that_exists_with_its_neg_1-3.png)
+![Current4](img/2441_largest_pos_int_that_exists_with_its_neg_1-4.png)
+![Current5](img/2441_largest_pos_int_that_exists_with_its_neg_1-5.png)
 
 #### Algorithm
 
@@ -309,11 +309,11 @@ After checking the conditions, we need to mark the current number as encountered
 
 The following is an illustration demonstrating the one pass bitset approach:
 
-![Current1](img/2-1.png)
-![Current2](img/2-2.png)
-![Current3](img/2-3.png)
-![Current4](img/2-4.png)
-![Current5](img/2-5.png)
+![Current1](img/2441_largest_pos_int_that_exists_with_its_neg_2-1.png)
+![Current2](img/2441_largest_pos_int_that_exists_with_its_neg_2-2.png)
+![Current3](img/2441_largest_pos_int_that_exists_with_its_neg_2-3.png)
+![Current4](img/2441_largest_pos_int_that_exists_with_its_neg_2-4.png)
+![Current5](img/2441_largest_pos_int_that_exists_with_its_neg_2-5.png)
 
 #### Algorithm
 

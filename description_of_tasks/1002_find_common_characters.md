@@ -54,15 +54,15 @@ Let's say we have the list and count of the common characters for the previous s
 
 We keep the smaller count because it ensures the character is present in all the strings processed so far.
 
-![Current1](img/1.png)
-![Current2](img/2.png)
-![Current3](img/3.png)
-![Current4](img/4.png)
-![Current5](img/5.png)
-![Current6](img/6.png)
-![Current7](img/7.png)
-![Current8](img/8.png)
-![Current9](img/9.png)
+![Current1](img/1002_find_common_characters_1.png)
+![Current2](img/1002_find_common_characters_2.png)
+![Current3](img/1002_find_common_characters_3.png)
+![Current4](img/1002_find_common_characters_4.png)
+![Current5](img/1002_find_common_characters_5.png)
+![Current6](img/1002_find_common_characters_6.png)
+![Current7](img/1002_find_common_characters_7.png)
+![Current8](img/1002_find_common_characters_8.png)
+![Current9](img/1002_find_common_characters_9.png)
 
 
 One option would be to use a hash set to store the frequencies of the characters for a string, iterating the characters one by one and incrementing their entry in the hash set. Can you think of a more efficient data structure, knowing that all characters of our strings are lowercase English letters? We can solve this problem more efficiently with an array with a fixed size of 26 for each letter of the alphabet.

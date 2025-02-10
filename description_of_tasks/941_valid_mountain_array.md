@@ -9,7 +9,7 @@ Recall that arr is a mountain array if and only if:
   * `arr[0] < arr[1] < ... < arr[i - 1] < arr[i]`
   * `arr[i] > arr[i + 1] > ... > arr[arr.length - 1]`
 
-![hint_valid_mountain_array](img/hint_valid_mountain_array.png)
+![hint_valid_mountain_array](img/941_valid_mountain_array_hint_valid_mountain_array.png)
 
 **Example 1:**
 

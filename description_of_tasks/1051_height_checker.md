@@ -68,17 +68,17 @@ Return _the **number of indices** where_ `heights[i] != expected[i]`.
 
 In this problem, we are required to find the number of elements that are different than the respective index if the array is sorted. We must sort the given array and compare the sorted and unsorted arrays.
 
-![slide1](img/Slide1.jpg)
+![slide1](img/1051_height_checker_Slide1.jpg)
 
 **Key Observation:** The purpose of this problem is to evaluate the interviewee's understanding of sorting algorithms and their ability to implement these algorithms without relying on built-in sort methods.
 
 There are a variety of sorting algorithms such as Bubble Sort, Insertion Sort, Selection Sort, Merge Sort, Heap Sort, Quick Sort, Counting Sort, Radix Sort, and others.
 
-![slide2](img/Slide2.jpg)
+![slide2](img/1051_height_checker_Slide2.jpg)
 
 We attached a list of time complexities of some popular sorting algorithms. Here, `n` is the number of elements in the array, `k` is the size of buckets used, and `d` is the number of digits in the maximum element in the array.
 
-In this article, we will concentrate on five algorithms that are deemed efficient and reasonable to implement during a real interview setting for this particular problem - **Bubble Sort, Merge Sort, Heap Sort, Counting Sort, and Radix Sort**. We will give brief descriptions of these algorithms but won't cover them in great detail.  
+In this article, we will concentrate on five algorithms that are deemed efficient and reasonable to implement during a real interview setting for this particular problem - **Bubble Sort, Merge Sort, Heap Sort, Counting Sort, and Radix Sort**. We will give brief descriptions of these algorithms but won't cover them in great detail.
 
 **Note:** We highly recommend implementing the other sorting algorithms on your own, too, for more practice.
 
@@ -98,7 +98,7 @@ Here's a breakdown of how Bubble Sort works:
 
 * **Repeat until sorted:** Bubble Sort continues making passes through the list, comparing and swapping adjacent elements until the entire list is sorted.
 
-![slide3](img/Slide3.jpg)
+![slide3](img/1051_height_checker_Slide3.jpg)
 
 #### Algorithm
 
@@ -182,7 +182,7 @@ The steps for implementing Merge Sort are as follows:
 
 * **Repeat the process until the entire data is sorted:** The Merge Sort function is called recursively until the entire data set is sorted.
 
-![slide4](img/Slide4.jpg)
+![slide4](img/1051_height_checker_Slide4.jpg)
 
 #### Algorithm
 
@@ -280,8 +280,8 @@ Here, n is the number of elements in the `heights` array.
 
 * Time complexity: O(nlogn)
 
-  * While sorting, we divide the `arr` array into two halves till there is only one element in the array, which will lead to O(logn) steps.  
-        n→n/2→n/4→...→1 (k steps)  
+  * While sorting, we divide the `arr` array into two halves till there is only one element in the array, which will lead to O(logn) steps.
+        n→n/2→n/4→...→1 (k steps)
         n/2(k−1)\=1⟹ k≈logn
   * After each division, we merge those respective halves which will take O(n) time each. Thus, sorting will take O(nlogn) time.
   * While comparing sorted and unsorted arrays, we again iterate on n elements, which will take O(n) time.
@@ -309,14 +309,14 @@ The steps for implementing Heap Sort are as follows:
 
 * **Repeat steps 2 and 3:** Repeat steps 2 and 3 until the binary heap is empty and the array is sorted in ascending order.
 
-![slide5](img/Slide5.jpg)
+![slide5](img/1051_height_checker_Slide5.jpg)
 
 Test
-![Current1](img/1.jpeg)
-![Current2](img/2.jpeg)
-![Current3](img/3.jpeg)
-![Current4](img/4.jpeg)
-![Current5](img/5.jpeg)
+![Current1](img/1051_height_checker_1.jpeg)
+![Current2](img/1051_height_checker_2.jpeg)
+![Current3](img/1051_height_checker_3.jpeg)
+![Current4](img/1051_height_checker_4.jpeg)
+![Current5](img/1051_height_checker_5.jpeg)
 
 #### Algorithm
 
@@ -426,7 +426,7 @@ The steps for implementing Counting Sort are as follows:
 
 * **Place elements in the original array:** Loop through the range of elements in the input array from the minimum value to the maximum value and place each element in its proper position in the original array based on the frequency in the hash map.
 
-![slide4](img/Slide7.jpg)
+![slide4](img/1051_height_checker_Slide7.jpg)
 
 #### Algorithm
 
@@ -520,9 +520,9 @@ The steps for implementing Radix Sort are as follows:
 
 * **Bucket Sort:** We need 10 buckets for each digit (0 - 9), and we will push array elements into their respective bucket and fetch the elements from each bucket one by one in the order it was pushed in the bucket.
 
-![slide5](img/Slide8.jpg)
+![slide5](img/1051_height_checker_Slide8.jpg)
 
-![slide5](img/Slide9.jpg)
+![slide5](img/1051_height_checker_Slide9.jpg)
 
 #### Algorithm
 

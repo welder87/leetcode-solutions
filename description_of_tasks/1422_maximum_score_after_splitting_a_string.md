@@ -119,7 +119,7 @@ We start by counting how many times `1` occurs in `s`. Let's store this value in
 
 Now, we iterate `i` in the same manner as the previous approach: each index `i` represents the final index of the left part. At each iteration `i`, we remove `s[i]` from the right part and add it to the left part.
 
-![example](img/1.png)
+![example](img/1422_maximum_score_after_splitting_a_string_1.png)
 
 There are two possibilities for each index `i`:
 

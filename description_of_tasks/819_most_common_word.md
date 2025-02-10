@@ -72,7 +72,7 @@ Each task functions like a stage in a pipeline, which takes the input from the p
 
 More specifically, for this problem, we could break it down into the following stages:
 
-![string processing pipeline](img/819_pipeline_.png)
+![string processing pipeline](img/819_most_common_word_819_pipeline_.png)
 
 1. We replace all the punctuations with spaces and at the same time convert each letter to its lowercase. One could also accomplish this in two stages. Here we merge them together in one stage.
 
@@ -151,7 +151,7 @@ We could implement the algorithm in one single loop, over the characters of the 
 
 * At each iteration, the character is either of letter (maybe digit), or punctuation or space in other cases.
 
-![character pointers](img/819_character_pointers_.png)
+![character pointers](img/819_most_common_word_819_character_pointers_.png)
 
 * Further more, we could divide it into the following two cases:
 

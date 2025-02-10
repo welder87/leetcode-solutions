@@ -50,7 +50,7 @@ Given two **0-indexed** integer arrays `nums1` and `nums2`, return _a list_ `ans
 
 ### Overview
 
-We are given two integer arrays, `nums1` and `nums2`, and need to return a list of two lists. The first list has the elements that are present only in `nums1`, while the second list has the elements that are present only in `nums2`.  
+We are given two integer arrays, `nums1` and `nums2`, and need to return a list of two lists. The first list has the elements that are present only in `nums1`, while the second list has the elements that are present only in `nums2`.
 
 ### Approach 1: Brute Force
 
@@ -92,7 +92,7 @@ public:
     // Returns the elements in the first arg nums1 that don't exist in the second arg nums2.
     vector<int> getElementsOnlyInFirstList(vector<int>& nums1, vector<int>& nums2) {
         unordered_set<int> onlyInNums1;
-        
+
         // Iterate over each element in the list nums1.
         for (int num : nums1) {
             bool existInNums2 = false;
@@ -103,16 +103,16 @@ public:
                     break;
                 }
             }
-            
+
             if (!existInNums2) {
                 onlyInNums1.insert(num);
             }
         }
-        
+
         // Convert to vector.
         return vector<int> (onlyInNums1.begin(), onlyInNums1.end());
     }
-    
+
     vector<vector<int>> findDifference(vector<int>& nums1, vector<int>& nums2) {
         return {getElementsOnlyInFirstList(nums1, nums2), getElementsOnlyInFirstList(nums2, nums1)};
     }
@@ -147,7 +147,7 @@ Instead of iterating over each element in the second array to check if it exists
 
 In this approach, we follow the above intuition. To find the elements that only exist in `nums1`, we first store the elements in `nums2` in the HashSet. Then we iterate over each element in the list `nums1`, and for each element, we check if it's there in the HashSet; if yes, we skip the element; otherwise, we store it in the list `onlyInNums1`.
 
-![fig](img/2215A.png)
+![fig](img/2215_find_the_difference_of_two_arrays_2215A.png)
 
 **Algorithm**
 
@@ -181,24 +181,24 @@ public:
     // Returns the elements in the first arg nums1 that don't exist in the second arg nums2.
     vector<int> getElementsOnlyInFirstList(vector<int>& nums1, vector<int>& nums2) {
         unordered_set<int> onlyInNums1;
-        
-        // Store nums2 elements in an unordered set. 
+
+        // Store nums2 elements in an unordered set.
         unordered_set<int> existsInNums2;
         for (int num : nums2) {
             existsInNums2.insert(num);
         }
-        
+
         // Iterate over each element in the list nums1.
         for (int num : nums1) {
             if (existsInNums2.find(num) == existsInNums2.end()) {
                 onlyInNums1.insert(num);
             }
         }
-        
+
         // Convert to vector.
         return vector<int> (onlyInNums1.begin(), onlyInNums1.end());
     }
-    
+
     vector<vector<int>> findDifference(vector<int>& nums1, vector<int>& nums2) {
         return {getElementsOnlyInFirstList(nums1, nums2), getElementsOnlyInFirstList(nums2, nums1)};
     }

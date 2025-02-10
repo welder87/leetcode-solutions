@@ -91,9 +91,9 @@ class Solution:
         # Iterate through possible pivot values
         for i in range(1, n + 1):
             # Calculate the sum of elements on the left side of the pivot
-            sum_left = sum(range(1, i + 1)) 
+            sum_left = sum(range(1, i + 1))
             # Calculate the sum of elements on the right side of the pivot
-            sum_right = sum(range(i, n + 1)) 
+            sum_right = sum(range(i, n + 1))
 
             # Check if the sums on both sides are equal
             if sum_left == sum_right:
@@ -128,12 +128,12 @@ Within the loop, we check for a valid pivot. If the sums are equal and the point
 
 Refer to the visual slideshow demonstrating the two pointer approach:
 
-![Current1](img/1-1.png)
-![Current2](img/1-2.png)
-![Current3](img/1-3.png)
-![Current4](img/1-4.png)
-![Current5](img/1-5.png)
-![Current6](img/1-6.png)
+![Current1](img/2485_find_the_pivot_integer_1-1.png)
+![Current2](img/2485_find_the_pivot_integer_1-2.png)
+![Current3](img/2485_find_the_pivot_integer_1-3.png)
+![Current4](img/2485_find_the_pivot_integer_1-4.png)
+![Current5](img/2485_find_the_pivot_integer_1-5.png)
+![Current6](img/2485_find_the_pivot_integer_1-6.png)
 
 #### Algorithm
 
@@ -196,7 +196,7 @@ To optimize the solution further, we can use the efficiency of [binary search](h
 In this optimization, we perform a check using the expression `mid * mid - totalSum = 0`. If the result is zero, it implies that the current midpoint is the pivot we are searching for. This is because the quadratic relationship x2 in the cumulative sum means that the pivot is the point where the cumulative sum reaches half of the total sum.
 
 Total Sum: 36
-Pivot: 6  
+Pivot: 6
 $6 \cdot 6=36$
 
 |1|2|3|4|5|6|7|8|
@@ -215,10 +215,10 @@ The function $f(x) = x \cdot x$ represents a monotonic increasing function for n
 
 Refer to the visual slideshow demonstrating the binary search approach:
 
-![Current1](img/2-1.png)
-![Current2](img/2-2.png)
-![Current3](img/2-3.png)
-![Current4](img/2-4.png)
+![Current1](img/2485_find_the_pivot_integer_2-1.png)
+![Current2](img/2485_find_the_pivot_integer_2-2.png)
+![Current3](img/2485_find_the_pivot_integer_2-3.png)
+![Current4](img/2485_find_the_pivot_integer_2-4.png)
 
 #### Algorithm
 
@@ -236,7 +236,7 @@ class Solution:
     def pivotInteger(self, n: int) -> int:
         # Initialize left and right pointers for binary search
         left, right = 1, n
-        
+
         # Calculate the total sum of the sequence
         total_sum = n * (n + 1) // 2
 

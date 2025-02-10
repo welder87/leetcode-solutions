@@ -4,7 +4,7 @@ Given the `root` of a binary tree, _check whether it is a mirror of itself_ (i.e
 
 **Example 1:**
 
-![symtree1.jpg](img/symtree1.jpg)
+![symtree1.jpg](img/101_symmetric_tree_symtree1.jpg)
 
 > **Input:** root = \[1,2,2,3,4,4,3\]
 >
@@ -12,7 +12,7 @@ Given the `root` of a binary tree, _check whether it is a mirror of itself_ (i.e
 
 **Example 2:**
 
-![symtree2.jpg](img/symtree2.jpg)
+![symtree2.jpg](img/101_symmetric_tree_symtree2.jpg)
 
 > **Input:** root = \[1,2,2,null,3,null,3\]
 >

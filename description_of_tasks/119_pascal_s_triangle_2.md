@@ -4,7 +4,7 @@ Given an integer `rowIndex`, return the `rowIndexth` (**0-indexed**) row of the 
 
 In **Pascal's triangle**, each number is the sum of the two numbers directly above it as shown:
 
-![PascalTriangleAnimated](../img/PascalTriangleAnimated2.gif)
+![PascalTriangleAnimated](img/PascalTriangleAnimated2.gif)
 
 **Example 1:**
 

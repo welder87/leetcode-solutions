@@ -152,12 +152,12 @@ By traversing the arrays in this manner, we will find the first common value, if
 
 Below is a visualization of this algorithm:
 
-![Current1](img/1.png)
-![Current2](img/2.png)
-![Current3](img/3.png)
-![Current4](img/4.png)
-![Current5](img/5.png)
-![Current6](img/6.png)
+![Current1](img/2540_minimum_common_value_1.png)
+![Current2](img/2540_minimum_common_value_2.png)
+![Current3](img/2540_minimum_common_value_3.png)
+![Current4](img/2540_minimum_common_value_4.png)
+![Current5](img/2540_minimum_common_value_5.png)
+![Current6](img/2540_minimum_common_value_6.png)
 
 #### Algorithm
 
@@ -214,7 +214,7 @@ We can solve the problem by iterating through each element in `nums1`, and using
 
 ##### Implementation Note
 
-`mid`, the middle of the subarray, is set to the index in the middle of the array. The basic midpoint formula is `(left + right) / 2`.  
+`mid`, the middle of the subarray, is set to the index in the middle of the array. The basic midpoint formula is `(left + right) / 2`.
 You'll notice that the below implementations instead use `left + (right - left) / 2`. This is because if `left + right` is greater than the maximum integer value, 231−1, it overflows and causes errors.
 
 `left + (right - left) / 2` is an equivalent formula, and never stores a value larger than `left` or `right`. Thus, if `left` and `right` are within the integer limits, we will never overflow.
@@ -248,11 +248,11 @@ class Solution:
                     left = mid + 1
                 else:
                     return True
-            return False 
+            return False
 
         # Binary search should be done on the larger array
         # If nums1 is longer, call getCommon with the arrays swapped
-        if len(nums1) > len(nums2): 
+        if len(nums1) > len(nums2):
             return self.getCommon(nums2, nums1)
 
         # Search for each element of nums1 in nums2

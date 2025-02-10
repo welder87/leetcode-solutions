@@ -197,8 +197,8 @@ Let n be the size of `arr1` and m be the size of `arr2`.
 
   * In Python, the sort method sorts a list using the Timsort algorithm which is a combination of Merge Sort and Insertion Sort and has O(n) additional space.
 
-    Therefore, the overall space complexity depends on the language used for sorting:  
-    Python: O(n+m)  
+    Therefore, the overall space complexity depends on the language used for sorting:
+    Python: O(n+m)
 
 * * *
 
@@ -218,10 +218,10 @@ Finally, we return the result array, which now contains all the elements from th
 
 The approach is visualized below:
 
-![First](img/1.png)
-![Second](img/2.png)
-![Third](img/3.png)
-![Four](img/4.png)
+![First](img/1122_relative_sort_array_1.png)
+![Second](img/1122_relative_sort_array_2.png)
+![Third](img/1122_relative_sort_array_3.png)
+![Four](img/1122_relative_sort_array_4.png)
 
 #### Algorithm
 

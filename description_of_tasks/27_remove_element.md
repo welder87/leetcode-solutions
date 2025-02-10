@@ -62,7 +62,7 @@ for (int i = 0; i < actualLength; i++) {
 
 1. The problem statement clearly asks us to modify the array in-place and it also says that the element beyond the new length of the array can be anything. Given an element, we need to remove all the occurrences of it from the array. We don't technically need to **remove** that element per-say, right?
 
-2. We can move all the occurrences of this element to the end of the array. Use two pointers!  
-![hint_remove_element](img/hint_remove_element.png)
+2. We can move all the occurrences of this element to the end of the array. Use two pointers!
+![hint_remove_element](img/27_remove_element_hint_remove_element.png)
 
 3. Yet another direction of thought is to consider the elements to be removed as non-existent. In a single pass, if we keep copying the visible elements in-place, that should also solve this problem for us.
