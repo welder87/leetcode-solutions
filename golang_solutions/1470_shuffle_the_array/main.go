@@ -1,9 +1,8 @@
-package shufflearray
+package problem1470
 
-func Shuffle(nums []int, n int) []int {
+func shuffle(nums []int, n int) []int {
 	vector := make([]int, len(nums))
-	g := 0
-	j := n
+	g, j := 0, n
 	for i := 0; i < len(vector); i++ {
 		if i%2 == 0 {
 			vector[i] = nums[g]
