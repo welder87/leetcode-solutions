@@ -36,3 +36,17 @@ You must implement a solution with a linear runtime complexity and use only co
 ## Hints
 
 1. Think about the XOR (^) operator's property.
+
+## Similar Questions
+
+Easy
+
+* [268. Missing Number](../lc_268_missing_number/README.md)
+* [389. Find the Difference]()
+* [3158. Find the XOR of Numbers Which Appear Twice]()
+
+Medium
+
+* [137. Single Number II]()
+* [260. Single Number III]()
+* [287. Find the Duplicate Number](../lc_287_find_the_duplicate_number/README.md)

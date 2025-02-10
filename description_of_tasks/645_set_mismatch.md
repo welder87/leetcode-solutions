@@ -30,3 +30,14 @@ Find the number that occurs twice and the number that is missing and return _the
 * `Hash Table`
 * `Bit Manipulation`
 * `Sorting`
+
+## Similar Questions
+
+Easy
+
+* [268. Missing Number](../lc_268_missing_number/README.md)
+* [136. Single Number](../lc_136_single_number/README.md)
+
+Medium
+
+* [287. Find the Duplicate Number](../lc_287_find_the_duplicate_number/README.md)
