@@ -35,9 +35,9 @@ Find the number that occurs twice and the number that is missing and return _the
 
 Easy
 
-* [268. Missing Number](../lc_268_missing_number/README.md)
-* [136. Single Number](../lc_136_single_number/README.md)
+* [268. Missing Number](268_missing_number.md)
+* [136. Single Number](136_single_number.md)
 
 Medium
 
-* [287. Find the Duplicate Number](../lc_287_find_the_duplicate_number/README.md)
+* [287. Find the Duplicate Number](287_find_the_duplicate_number.md)

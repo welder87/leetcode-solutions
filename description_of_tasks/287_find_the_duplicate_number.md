@@ -47,9 +47,9 @@ You must solve the problem **without** modifying the array `nums` and using onl
 
 Easy
 
-* [136. Single Number](../lc_136_single_number/README.md)
-* [268. Missing Number](../lc_268_missing_number/README.md)
-* [645. Set Mismatch](../lc_645_set_mismatch/README.md)
+* [136. Single Number](136_single_number.md)
+* [268. Missing Number](268_missing_number.md)
+* [645. Set Mismatch](645_set_mismatch.md)
 
 Medium
 

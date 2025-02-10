@@ -50,11 +50,11 @@ Could you implement a solution using only `O(1)` extra space complexity and `O(n
 
 Easy
 
-* [136. Single Number](../lc_136_single_number/README.md)
+* [136. Single Number](136_single_number.md)
 
 Medium
 
-* [287. Find the Duplicate Number](../lc_287_find_the_duplicate_number/README.md)
+* [287. Find the Duplicate Number](287_find_the_duplicate_number.md)
 * [1980. Find Unique Binary String]()
 
 Hard
