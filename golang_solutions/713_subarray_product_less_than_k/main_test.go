@@ -5,7 +5,17 @@ import (
 	"testing"
 )
 
+type fn func([]int, int) int
+
 func TestNumSubarrayProductLessThanK(t *testing.T) {
+	testNumSubarrayProductLessThanK(t, numSubarrayProductLessThanK)
+}
+
+func TestNumSubarrayProductLessThanKV1(t *testing.T) {
+	testNumSubarrayProductLessThanK(t, numSubarrayProductLessThanKV1)
+}
+
+func testNumSubarrayProductLessThanK(t *testing.T, function fn) {
 	testCases := []struct {
 		nums   []int
 		k int
@@ -28,7 +38,7 @@ func TestNumSubarrayProductLessThanK(t *testing.T) {
 	for _, testCase := range testCases {
 		testName := fmt.Sprintf("%v %v", testCase.nums, testCase.k)
 		t.Run(testName, func(t *testing.T) {
-			ans := numSubarrayProductLessThanK(testCase.nums, testCase.k)
+			ans := function(testCase.nums, testCase.k)
 			if testCase.ans != ans {
 				t.Errorf("got %v, want %v", ans, testCase.ans)
 			}
