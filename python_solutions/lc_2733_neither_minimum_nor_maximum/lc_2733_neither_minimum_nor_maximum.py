@@ -7,7 +7,7 @@ class Solution:
         return nums[1]
 
     def findNonMinOrMaxV1(self, nums: list[int]) -> int:
-        # Time complexity: O(2n). Space complexity: O(m).
+        # Time complexity: O(3n). Space complexity: O(m).
         if len(nums) < 3:
             return -1
         sorted_nums = [False] * (max(nums) + 1)
