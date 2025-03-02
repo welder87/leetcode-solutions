@@ -5,7 +5,17 @@ import (
 	"testing"
 )
 
+type fn func([]int) int
+
 func TestFindLucky(t *testing.T) {
+	testFindLucky(t, findLucky)
+}
+
+func TestFindLuckyV1(t *testing.T) {
+	testFindLucky(t, findLuckyV1)
+}
+
+func testFindLucky(t *testing.T, function fn) {
 	testCases := []struct {
 		nums []int
 		ans  int
@@ -24,7 +34,7 @@ func TestFindLucky(t *testing.T) {
 	for _, testCase := range testCases {
 		testName := fmt.Sprintf("%v", testCase.nums)
 		t.Run(testName, func(t *testing.T) {
-			ans := findLucky(testCase.nums)
+			ans := function(testCase.nums)
 			if testCase.ans != ans {
 				t.Errorf("got %v, want %v", ans, testCase.ans)
 			}
