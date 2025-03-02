@@ -15,6 +15,10 @@ func TestFindLuckyV1(t *testing.T) {
 	testFindLucky(t, findLuckyV1)
 }
 
+func TestFindLuckyV2(t *testing.T) {
+	testFindLucky(t, findLuckyV2)
+}
+
 func testFindLucky(t *testing.T, function fn) {
 	testCases := []struct {
 		nums []int

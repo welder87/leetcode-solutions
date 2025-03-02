@@ -1,5 +1,7 @@
 package problem1394
 
+import "sort"
+
 // Time complexity: O(n + m). Space complexity: O(m).
 func findLucky(arr []int) int {
 	counter := make(map[int]int, len(arr))
@@ -34,4 +36,28 @@ func findLuckyV1(arr []int) int {
 		}
 	}
 	return ans
+}
+
+// Time complexity: O(n log n + n). Space complexity: O(n).
+func findLuckyV2(arr []int) int {
+	if len(arr) == 1 {
+		if arr[0] == 1 {
+			return 1
+		}
+		return -1
+	}
+	sort.Ints(arr)
+	i := len(arr) - 1
+	largest_lucky := -1
+	for i >= 0 {
+		counter, num := 0, arr[i]
+		for i >= 0 && num == arr[i] {
+			counter += 1
+			i -= 1
+		}
+		if num == counter && largest_lucky < num {
+			largest_lucky = num
+		}
+	}
+	return largest_lucky
 }
