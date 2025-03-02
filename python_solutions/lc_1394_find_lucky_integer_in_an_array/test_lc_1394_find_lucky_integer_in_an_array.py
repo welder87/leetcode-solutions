@@ -26,6 +26,11 @@ def test_success_v1(nums: list[int], ans: int, solution: Solution):
     assert solution.findLuckyV1(nums) == ans
 
 
+@pytest.mark.parametrize(("nums", "ans"), test_cases)
+def test_success_v2(nums: list[int], ans: int, solution: Solution):
+    assert solution.findLuckyV2(nums) == ans
+
+
 @pytest.fixture
 def solution() -> Solution:
     return Solution()
