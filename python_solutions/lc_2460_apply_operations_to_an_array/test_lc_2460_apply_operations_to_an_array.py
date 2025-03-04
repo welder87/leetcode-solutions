@@ -26,6 +26,11 @@ def test_success_v0(nums: list[int], ans: list[int], solution: Solution):
     assert ans == solution.applyOperations(nums)
 
 
+@pytest.mark.parametrize(("nums", "ans"), test_cases)
+def test_success_v1(nums: list[int], ans: list[int], solution: Solution):
+    assert ans == solution.applyOperationsV1(nums)
+
+
 @pytest.fixture
 def solution() -> Solution:
     return Solution()
