@@ -66,3 +66,11 @@ for (int i = 0; i < actualLength; i++) {
 ![hint_remove_element](img/27_remove_element_hint_remove_element.png)
 
 3. Yet another direction of thought is to consider the elements to be removed as non-existent. In a single pass, if we keep copying the visible elements in-place, that should also solve this problem for us.
+
+## Similar Questions
+
+Easy
+
+* [26. Remove Duplicates from Sorted Array](26_remove_duplicates_from_sorted_array.md)
+* [203. Remove Linked List Elements]()
+* [283. Move Zeroes](283_move_zeroes.md)

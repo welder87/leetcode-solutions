@@ -63,7 +63,7 @@ Return _the resulting array_.
 
 Easy
 
-* [26. Remove Duplicates from Sorted Array]()
+* [26. Remove Duplicates from Sorted Array](26_remove_duplicates_from_sorted_array.md)
 * [283. Move Zeroes](283_move_zeroes.md)
 
 ## Solution
