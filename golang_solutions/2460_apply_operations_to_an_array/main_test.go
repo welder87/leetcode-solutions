@@ -12,6 +12,10 @@ func TestApplyOperations(t *testing.T) {
 	testApplyOperations(t, applyOperations)
 }
 
+func TestIntersectionV1(t *testing.T) {
+	testApplyOperations(t, applyOperationsV1)
+}
+
 func testApplyOperations(t *testing.T, fucntion fn) {
 	testCases := []struct {
 		nums []int
