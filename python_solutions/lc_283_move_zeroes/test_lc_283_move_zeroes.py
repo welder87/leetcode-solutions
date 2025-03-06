@@ -24,6 +24,12 @@ def test_success_v0(nums: list[int], ans: set[int], solution: Solution):
     assert nums == ans
 
 
+@pytest.mark.parametrize(("nums", "ans"), test_cases)
+def test_success_v1(nums: list[int], ans: set[int], solution: Solution):
+    solution.moveZeroesV1(nums)
+    assert nums == ans
+
+
 @pytest.fixture
 def solution() -> Solution:
     return Solution()
