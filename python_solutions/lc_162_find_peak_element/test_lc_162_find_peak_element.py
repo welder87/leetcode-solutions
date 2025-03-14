@@ -30,6 +30,11 @@ def test_success_v1(nums: list[int], ans: int, solution: Solution):
     assert solution.findPeakElementV1(nums) in ans
 
 
+@pytest.mark.parametrize(("nums", "ans"), test_cases)
+def test_success_v2(nums: list[int], ans: int, solution: Solution):
+    assert solution.findPeakElementV2(nums) in ans
+
+
 @pytest.fixture
 def solution() -> Solution:
     return Solution()
