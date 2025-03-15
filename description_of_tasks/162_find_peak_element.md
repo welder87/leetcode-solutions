@@ -40,7 +40,7 @@ You must write an algorithm that runs in `O(log n)` time.
 
 Medium
 
-* [852. Peak Index in a Mountain Array]()
+* [852. Peak Index in a Mountain Array](852_peak_index_in_a_mountain_array.md)
 * [1901. Find a Peak Element II]()
 
 Easy
