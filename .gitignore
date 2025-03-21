@@ -199,3 +199,5 @@ go.work.sum
 
 python_solutions/.vscode
 golang_solutions/.vscode
+python_solutions/.zed
+golang_solutions/.zed
