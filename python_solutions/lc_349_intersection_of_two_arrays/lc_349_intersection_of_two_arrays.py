@@ -20,3 +20,21 @@ class Solution:
             else:
                 j += 1
         return list(result)
+
+    def intersection_v2(self, nums1: list[int], nums2: list[int]) -> list[int]:
+        # Time complexity: O(n log n + m log m). Space complexity: O(n + m + k).
+        # itmo binary search
+        result = set()
+        nums1.sort()
+        for target in nums2:
+            left, right = -1, len(nums1)
+            while right > left + 1:
+                mid = left + (right - left) // 2
+                if nums1[mid] == target:
+                    result.add(target)
+                    break
+                if nums1[mid] > target:
+                    right = mid
+                else:
+                    left = mid
+        return list(result)
