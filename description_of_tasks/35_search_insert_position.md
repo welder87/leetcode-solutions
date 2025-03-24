@@ -38,5 +38,5 @@ You must write an algorithm with `O(log n)` runtime complexity.
 
 Easy
 
-* [278. First Bad Version]()
+* [278. First Bad Version](278_first_bad_version.md)
 * [3065. Minimum Operations to Exceed Threshold Value I]()
