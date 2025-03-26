@@ -27,6 +27,11 @@ def test_success_v0(nums: list[int], target: int, ans: list[int], solution: Solu
     assert solution.searchRange(nums, target) == ans
 
 
+@pytest.mark.parametrize(("nums", "target", "ans"), test_cases)
+def test_success_v1(nums: list[int], target: int, ans: list[int], solution: Solution):
+    assert solution.searchRangeV1(nums, target) == ans
+
+
 @pytest.fixture
 def solution() -> Solution:
     return Solution()
