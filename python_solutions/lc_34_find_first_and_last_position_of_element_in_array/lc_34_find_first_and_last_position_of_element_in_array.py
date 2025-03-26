@@ -46,3 +46,30 @@ class Solution:
             else:
                 right = mid
         return right if kind == "left" else left
+
+    def searchRangeV2(self, nums: list[int], target: int) -> list[int]:
+        # Time complexity: O(2 log n). Space complexity: O(1).
+        if len(nums) == 0:
+            return [-1, -1]
+        left = self._bs(nums, target, "left", -1, len(nums))
+        if left == -1:
+            return [-1, -1]
+        right = self._bs(nums, target, "right", left - 1, len(nums))
+        return [-1, -1] if left > right else [left, right]
+
+    def _bs(
+        self,
+        nums: list[int],
+        target: int,
+        kind: str,
+        left: int,
+        right: int,
+    ) -> int:
+        compare = operator.lt if kind == "left" else operator.le
+        while right > left + 1:
+            mid = left + (right - left) // 2
+            if compare(nums[mid], target):
+                left = mid
+            else:
+                right = mid
+        return right if kind == "left" else left
