@@ -1,6 +1,7 @@
-package findwordscontaining
+package problem2942
 
-func FindWordsContaining(words []string, x byte) []int {
+// Time complexity: O(n * n). Space complexity: O(n)
+func findWordsContaining(words []string, x byte) []int {
 	lengthOfWords := len(words)
 	slice := make([]int, 0, lengthOfWords)
 	var lengthOfWord int
