@@ -35,3 +35,14 @@ You must write an algorithm with `O(log n)` runtime complexity.
 
 * `Array`
 * `Binary Search`
+
+## Similar Questions
+
+Medium
+
+* [2055. Plates Between Candles]()
+
+Easy
+
+* [278. First Bad Version](278_first_bad_version.md)
+* [2089. Find Target Indices After Sorting Array](2089_find_target_indices_after_sorting_array.md)
