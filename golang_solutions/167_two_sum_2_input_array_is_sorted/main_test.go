@@ -16,6 +16,10 @@ func TestTwoSumV1(t *testing.T) {
 	testTwoSum(t, twoSumV1)
 }
 
+func TestTwoSumV2(t *testing.T) {
+	testTwoSum(t, twoSumV2)
+}
+
 func testTwoSum(t *testing.T, function fn) {
 	testCases := []struct {
 		nums   []int

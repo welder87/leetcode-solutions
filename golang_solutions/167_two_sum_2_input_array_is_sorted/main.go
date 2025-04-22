@@ -41,3 +41,20 @@ func twoSumV1(numbers []int, target int) []int {
 	}
 	return []int{}
 }
+
+// Time complexity: O(n). Space complexity: O(1).
+func twoSumV2(numbers []int, target int) []int {
+	i, j := 0, len(numbers)-1
+	for i < j {
+		sm := numbers[i] + numbers[j]
+		if sm == target {
+			return []int{i + 1, j + 1}
+		}
+		if sm < target {
+			i++
+		} else {
+			j--
+		}
+	}
+	return []int{}
+}
