@@ -2,7 +2,7 @@ package problem1295
 
 import "strconv"
 
-// Time complexity: O(n). Space complexity: O(1).
+// Time complexity: O(n log m). Space complexity: O(1).
 func findNumbers(nums []int) int {
 	ans := 0
 	for _, num := range nums {
@@ -20,7 +20,7 @@ func findNumbers(nums []int) int {
 }
 
 
-// Time complexity: O(n). Space complexity: O(1).
+// Time complexity: O(n log m). Space complexity: O(1).
 func findNumbersV1(nums []int) int {
 	ans := 0
 	for _, num := range nums {
