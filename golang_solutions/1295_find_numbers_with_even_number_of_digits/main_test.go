@@ -15,6 +15,10 @@ func TestFindNumbersV1(t *testing.T) {
 	testFindNumbers(t, findNumbersV1)
 }
 
+func TestFindNumbersV2(t *testing.T) {
+	testFindNumbers(t, findNumbersV2)
+}
+
 func testFindNumbers(t *testing.T, function fn) {
 	testCases := []struct {
 		nums []int
