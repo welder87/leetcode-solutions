@@ -26,7 +26,7 @@ class Solution:
         return False
 
     def findKthPositiveV1(self, arr: list[int], k: int) -> int:
-        # Time complexity: O(2 n). Space complexity: O(n).
+        # Time complexity: O(n + k). Space complexity: O(n).
         s = set(arr)
         min_num, max_num = 1, arr[-1] * k + 1
         counter = 0
@@ -37,3 +37,16 @@ class Solution:
             if counter == k:
                 break
         return num
+
+    def findKthPositiveV2(self, arr: list[int], k: int) -> int:
+        # Time complexity: O(n + k). Space complexity: O(1).
+        num, j = 1, 0
+        counter = 0
+        while counter < k:
+            if j < len(arr) and num != arr[j] or j >= len(arr):
+                counter += 1
+                num += 1
+            else:
+                j += 1
+                num += 1
+        return num - 1

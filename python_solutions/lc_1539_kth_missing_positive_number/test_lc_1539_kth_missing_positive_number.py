@@ -17,7 +17,9 @@ test_cases = (
     ([10, 12, 13, 14], 11, 15),
     ([10, 12, 13, 14], 10, 11),
     ([10, 12, 13, 14], 9, 9),
-    # # corner cases
+    ([3, 10, 13], 12, 15),
+    ([3, 10, 13], 10, 12),
+    # corner cases
     ([1], 1, 2),
     ([2], 1, 1),
     ([3], 1, 1),
@@ -34,6 +36,11 @@ def test_success_v0(nums: list[int], target: int, ans: int, solution: Solution):
 @pytest.mark.parametrize(("nums", "target", "ans"), test_cases)
 def test_success_v1(nums: list[int], target: int, ans: int, solution: Solution):
     assert ans == solution.findKthPositiveV1(nums, target)
+
+
+@pytest.mark.parametrize(("nums", "target", "ans"), test_cases)
+def test_success_v2(nums: list[int], target: int, ans: int, solution: Solution):
+    assert ans == solution.findKthPositiveV2(nums, target)
 
 
 @pytest.fixture
