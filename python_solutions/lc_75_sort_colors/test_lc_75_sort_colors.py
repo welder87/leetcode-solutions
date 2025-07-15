@@ -30,6 +30,12 @@ def test_success_v1(nums: list[int], ans: int, solution: Solution):
     assert nums == ans
 
 
+@pytest.mark.parametrize(("nums", "ans"), test_cases)
+def test_success_v2(nums: list[int], ans: int, solution: Solution):
+    solution.sortColorsV2(nums)
+    assert nums == ans
+
+
 @pytest.fixture
 def solution() -> Solution:
     return Solution()
