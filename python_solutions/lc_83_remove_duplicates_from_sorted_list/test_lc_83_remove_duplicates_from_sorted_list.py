@@ -30,6 +30,13 @@ def test_success_v0(lst: list[int], ans: list[int], solution: Solution):
     assert compare_singly_linked_lists(to_singly_linked_list(ans), res)
 
 
+@pytest.mark.parametrize(("lst", "ans"), test_cases)
+def test_success_v1(lst: list[int], ans: list[int], solution: Solution):
+    res = solution.deleteDuplicatesV1(to_singly_linked_list(lst))
+    assert ans == to_list(res)
+    assert compare_singly_linked_lists(to_singly_linked_list(ans), res)
+
+
 @pytest.fixture
 def solution() -> Solution:
     return Solution()
