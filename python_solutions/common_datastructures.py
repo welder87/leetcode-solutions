@@ -16,7 +16,7 @@ def to_list(node: ListNode | None) -> list:
     nxt = node
     res = []
     while nxt is not None:
-        res.append(node.val)
+        res.append(nxt.val)
         nxt = nxt.next
     return res
 
