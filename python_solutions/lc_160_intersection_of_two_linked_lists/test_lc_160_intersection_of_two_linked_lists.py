@@ -75,6 +75,18 @@ def test_success_v1(
     assert compare_singly_linked_lists(res, ans)
 
 
+@pytest.mark.parametrize(("lst1", "lst2", "ans"), test_cases)
+def test_success_v2(
+    lst1: ListNode,
+    lst2: ListNode,
+    ans: ListNode | None,
+    solution: Solution,
+):
+    res = solution.getIntersectionNodeV2(lst1, lst2)
+    assert to_list(res) == to_list(ans)
+    assert compare_singly_linked_lists(res, ans)
+
+
 @pytest.fixture
 def solution() -> Solution:
     return Solution()

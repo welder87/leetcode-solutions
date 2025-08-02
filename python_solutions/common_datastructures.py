@@ -1,13 +1,15 @@
-from dataclasses import dataclass, field
 from typing import Optional
 
 
-@dataclass(slots=True)
 class ListNode:
     """Definition for singly-linked list."""
 
-    val: int = field(default=0)
-    next: Optional["ListNode"] = field(default=None)
+    def __init__(self, val: int, next: Optional["ListNode"] = None):
+        self.val = val
+        self.next = next
+
+    def __repr__(self) -> str:
+        return f"[ {self.__class__.__name__}: val={self.val}, next={self.next} ]"
 
 
 def to_list(node: ListNode | None) -> list:

@@ -51,3 +51,15 @@ class Solution:
             h1 = h1.next
             h2 = h2.next
         return h1
+
+    def getIntersectionNodeV2(
+        self,
+        headA: ListNode,
+        headB: ListNode,
+    ) -> Optional[ListNode]:
+        # Time complexity: O(m + n). Space complexity: O(1).
+        l1, l2 = headA, headB
+        while l1 != l2:
+            l1 = l1.next if l1 else headB
+            l2 = l2.next if l2 else headA
+        return l1
