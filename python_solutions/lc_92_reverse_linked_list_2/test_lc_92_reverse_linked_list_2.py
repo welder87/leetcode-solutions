@@ -112,6 +112,19 @@ def test_success_v1(
     assert compare_singly_linked_lists(to_singly_linked_list(ans), res)
 
 
+@pytest.mark.parametrize(("lst", "left", "right", "ans"), test_cases)
+def test_success_v2(
+    lst: list[int],
+    left: int,
+    right: int,
+    ans: list[int],
+    solution: Solution,
+):
+    res = solution.reverseBetweenV2(to_singly_linked_list(lst), left, right)
+    assert ans == to_list(res)
+    assert compare_singly_linked_lists(to_singly_linked_list(ans), res)
+
+
 @pytest.fixture
 def solution() -> Solution:
     return Solution()
