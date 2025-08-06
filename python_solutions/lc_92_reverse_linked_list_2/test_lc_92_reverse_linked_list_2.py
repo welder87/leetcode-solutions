@@ -35,32 +35,54 @@ test_cases = (
     ),
     pytest.param(
         [8, 8, -6, 0, 45, 45, -17, 0],
-        4,
-        6,
-        [8, 8, -6, 45, 45, 0, -17, 0],
+        2,
+        7,
+        [8, -17, 45, 45, 0, -6, 8, 0],
         id="103",
     ),
     pytest.param(
         [8, 8, -6, 0, 45, 45, -17, 0],
-        5,
-        5,
-        [8, 8, -6, 0, 45, 45, -17, 0],
+        4,
+        6,
+        [8, 8, -6, 45, 45, 0, -17, 0],
         id="104",
     ),
     pytest.param(
         [8, 8, -6, 0, 45, 45, -17, 0],
-        2,
+        5,
         7,
-        [8, -17, 45, 45, 0, -6, 8, 0],
+        [8, 8, -6, 0, -17, 45, 45, 0],
         id="105",
     ),
+    pytest.param(
+        [8, 8, -6, 0, 45, 45, -17, 0],
+        5,
+        5,
+        [8, 8, -6, 0, 45, 45, -17, 0],
+        id="106",
+    ),
+    pytest.param(
+        [8, 8, -6, 0, 45, 45, -17, 0],
+        8,
+        8,
+        [8, 8, -6, 0, 45, 45, -17, 0],
+        id="107",
+    ),
+    pytest.param(
+        [8, 8, -6, 0, 45, 45, -17, 0],
+        1,
+        1,
+        [8, 8, -6, 0, 45, 45, -17, 0],
+        id="108",
+    ),
     # corner cases
-    pytest.param([], 1, 1, [], id="201"),
+    pytest.param([], 1, 1, [], id="200"),
+    pytest.param([], 2, 2, [], id="201"),
     pytest.param([1, 2], 1, 2, [2, 1], id="202"),
     pytest.param([1, 2, 3], 1, 2, [2, 1, 3], id="203"),
     pytest.param([1, 2, 3], 1, 3, [3, 2, 1], id="204"),
     pytest.param([1, 2, 3], 2, 3, [1, 3, 2], id="205"),
-    pytest.param([1, 2, 3], 3, 3, [1, 2, 3], id="205"),
+    pytest.param([1, 2, 3], 3, 3, [1, 2, 3], id="206"),
 )
 
 
@@ -73,6 +95,19 @@ def test_success_v0(
     solution: Solution,
 ):
     res = solution.reverseBetween(to_singly_linked_list(lst), left, right)
+    assert ans == to_list(res)
+    assert compare_singly_linked_lists(to_singly_linked_list(ans), res)
+
+
+@pytest.mark.parametrize(("lst", "left", "right", "ans"), test_cases)
+def test_success_v1(
+    lst: list[int],
+    left: int,
+    right: int,
+    ans: list[int],
+    solution: Solution,
+):
+    res = solution.reverseBetweenV1(to_singly_linked_list(lst), left, right)
     assert ans == to_list(res)
     assert compare_singly_linked_lists(to_singly_linked_list(ans), res)
 

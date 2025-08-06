@@ -52,3 +52,49 @@ class Solution:
         start.next = post_end
 
         return head
+
+    def reverseBetweenV1(
+        self,
+        head: Optional[ListNode],
+        left: int,
+        right: int,
+    ) -> Optional[ListNode]:
+        # Time complexity: O(n). Space complexity: O(1).
+        if head is None or head.next is None or left == right:
+            return head
+        counter = 0
+        cur, prev, nxt = head, None, None
+        pre_start, start, end, post_end = None, None, None, None
+        while cur is not None:
+            counter += 1
+            if counter < left:
+                prev = cur
+                cur = cur.next
+            elif left <= counter <= right:
+                if counter == left:
+                    pre_start = prev
+                    start = cur
+                    if pre_start is not None:
+                        pre_start.next = None
+                    prev = None
+                elif counter == right:
+                    post_end = cur.next
+                    cur.next = None
+                    end = cur
+                nxt = cur.next
+                cur.next = prev
+                prev = cur
+                cur = nxt
+            else:
+                break
+        if pre_start is None and post_end is None:
+            return end
+        if pre_start is None and post_end is not None:
+            start.next = post_end
+            return end
+        if pre_start is not None and post_end is None:
+            pre_start.next = end
+            return head
+        pre_start.next = end
+        start.next = post_end
+        return head
