@@ -12,3 +12,10 @@ class Solution:
                 break
             node = nxt
             nxt = nxt.next
+
+    def deleteNodeV1(self, node):
+        # Solution https://leetcode.com/problems/delete-node-in-a-linked-list/editorial/
+        # Overwrite data of next node on current node.
+        node.val = node.next.val
+        # Make current node point to next of next node.
+        node.next = node.next.next

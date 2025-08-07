@@ -37,6 +37,17 @@ def test_success_v0(lst: list[int], val: int, ans: list[int], solution: Solution
     assert compare_singly_linked_lists(to_singly_linked_list(ans), ll)
 
 
+@pytest.mark.parametrize(("lst", "val", "ans"), test_cases)
+def test_success_v1(lst: list[int], val: int, ans: list[int], solution: Solution):
+    ll = to_singly_linked_list(lst)
+    node = ll
+    while node.next is not None and node.val != val:
+        node = node.next
+    solution.deleteNodeV1(node)
+    assert ans == to_list(ll)
+    assert compare_singly_linked_lists(to_singly_linked_list(ans), ll)
+
+
 @pytest.fixture
 def solution() -> Solution:
     return Solution()
