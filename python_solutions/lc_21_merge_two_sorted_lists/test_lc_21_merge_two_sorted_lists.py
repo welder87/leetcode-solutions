@@ -44,6 +44,16 @@ def test_success_v1(l1: list[int], l2: list[int], ans: list[int], solution: Solu
     assert compare_singly_linked_lists(slt, res)
 
 
+@pytest.mark.parametrize(("l1", "l2", "ans"), test_cases)
+def test_success_v2(l1: list[int], l2: list[int], ans: list[int], solution: Solution):
+    slt1 = to_singly_linked_list(l1)
+    slt2 = to_singly_linked_list(l2)
+    slt = to_singly_linked_list(ans)
+    res = solution.mergeTwoListsV2(slt1, slt2)
+    assert to_list(res) == ans
+    assert compare_singly_linked_lists(slt, res)
+
+
 @pytest.fixture
 def solution() -> Solution:
     return Solution()
