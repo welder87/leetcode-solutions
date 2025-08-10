@@ -34,3 +34,21 @@ class Solution:
                 p2 = p2.next
             cur = cur.next
         return head
+
+    def mergeTwoListsV1(
+        self,
+        list1: Optional[ListNode],
+        list2: Optional[ListNode],
+    ) -> Optional[ListNode]:
+        # Time complexity: O(n+m). Space complexity: O(1).
+        dummy = node = ListNode(val=0)
+        while list1 is not None or list2 is not None:
+            if list2 is None or list1 is not None and list1.val < list2.val:
+                node.next = list1
+                list1 = list1.next
+            else:
+                node.next = list2
+                list2 = list2.next
+            node = node.next
+            node.next = None
+        return dummy.next

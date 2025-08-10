@@ -1,6 +1,10 @@
 import pytest
 
-from common_datastructures import compare_singly_linked_lists, to_singly_linked_list
+from common_datastructures import (
+    compare_singly_linked_lists,
+    to_list,
+    to_singly_linked_list,
+)
 from lc_21_merge_two_sorted_lists.lc_21_merge_two_sorted_lists import Solution
 
 test_cases = (
@@ -26,6 +30,17 @@ def test_success_v0(l1: list[int], l2: list[int], ans: list[int], solution: Solu
     slt2 = to_singly_linked_list(l2)
     slt = to_singly_linked_list(ans)
     res = solution.mergeTwoLists(slt1, slt2)
+    assert to_list(res) == ans
+    assert compare_singly_linked_lists(slt, res)
+
+
+@pytest.mark.parametrize(("l1", "l2", "ans"), test_cases)
+def test_success_v1(l1: list[int], l2: list[int], ans: list[int], solution: Solution):
+    slt1 = to_singly_linked_list(l1)
+    slt2 = to_singly_linked_list(l2)
+    slt = to_singly_linked_list(ans)
+    res = solution.mergeTwoListsV1(slt1, slt2)
+    assert to_list(res) == ans
     assert compare_singly_linked_lists(slt, res)
 
 
