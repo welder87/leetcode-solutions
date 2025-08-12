@@ -28,6 +28,13 @@ def test_success_v0(lst: list[int], ans: list[int], solution: Solution):
     assert compare_singly_linked_lists(res, to_singly_linked_list(ans))
 
 
+@pytest.mark.parametrize(("lst", "ans"), test_cases)
+def test_success_v1(lst: list[int], ans: list[int], solution: Solution):
+    res = solution.swapPairsV1(to_singly_linked_list(lst))
+    assert to_list(res) == ans
+    assert compare_singly_linked_lists(res, to_singly_linked_list(ans))
+
+
 @pytest.fixture
 def solution() -> Solution:
     return Solution()
