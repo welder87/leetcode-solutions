@@ -34,10 +34,19 @@ def to_singly_linked_list(lst: list) -> ListNode | None:
     return head
 
 
-def compare_singly_linked_lists(head1: ListNode | None, head2: ListNode | None):
+def compare_singly_linked_lists(
+    head1: ListNode | None,
+    head2: ListNode | None,
+    *,
+    cycle_count: int | None = None,
+):
+    counter = 0
     while head1 and head2:
+        counter += 1
         if head1.val != head2.val:
             return False
         head1 = head1.next
         head2 = head2.next
+        if counter == cycle_count:
+            return True
     return head1 is None and head2 is None
