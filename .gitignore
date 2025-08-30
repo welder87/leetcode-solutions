@@ -197,7 +197,5 @@ go.work.sum
 # env file
 .env
 
-python_solutions/.vscode
-golang_solutions/.vscode
-python_solutions/.zed
-golang_solutions/.zed
+**/.zed/*
+**/.vscode/*
