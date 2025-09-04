@@ -12,3 +12,16 @@ class Solution:
                     break
             ans[idx] = val
         return ans
+
+    def nextGreaterElementV1(self, nums1: list[int], nums2: list[int]) -> list[int]:
+        # Time complexity: O(n + m). Space complexity: O(k + p).
+        # Solution based on: https://algo.monster/liteproblems/496
+        stack = []
+        h_table = {}
+        for idx in range(len(nums2) - 1, -1, -1):
+            while stack and stack[-1] < nums2[idx]:
+                stack.pop()
+            if stack:
+                h_table[nums2[idx]] = stack[-1]
+            stack.append(nums2[idx])
+        return [h_table.get(num, -1) for num in nums1]
