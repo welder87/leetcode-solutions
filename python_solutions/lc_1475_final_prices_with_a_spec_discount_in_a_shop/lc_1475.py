@@ -36,3 +36,13 @@ class Solution:
             # Add current index to stack
             stack.append(i)
         return result
+
+    def finalPricesV3(self, prices: list[int]) -> list[int]:
+        # Time complexity: O(n + n). Space complexity: O(n).
+        stack = []
+        for idx, price in enumerate(prices):
+            while stack and prices[stack[-1]] >= price:
+                prev_idx = stack.pop()
+                prices[prev_idx] = prices[prev_idx] - price
+            stack.append(idx)
+        return prices
