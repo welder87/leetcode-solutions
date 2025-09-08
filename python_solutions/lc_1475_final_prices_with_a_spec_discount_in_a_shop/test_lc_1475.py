@@ -31,6 +31,11 @@ def test_success_v1(lst: list[int], ans: list[int], solution: Solution):
     assert solution.finalPricesV1(lst) == ans
 
 
+@pytest.mark.parametrize(("lst", "ans"), test_cases)
+def test_success_v2(lst: list[int], ans: list[int], solution: Solution):
+    assert solution.finalPricesV2(lst) == ans
+
+
 @pytest.fixture
 def solution() -> Solution:
     return Solution()
