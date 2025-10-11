@@ -33,6 +33,11 @@ def test_success_v0(s: str, c: str, ans: list[int], solution: Solution):
     assert solution.shortestToChar(s, c) == ans
 
 
+@pytest.mark.parametrize(("s", "c", "ans"), test_cases)
+def test_success_v1(s: str, c: str, ans: list[int], solution: Solution):
+    assert solution.shortestToCharV1(s, c) == ans
+
+
 @pytest.fixture
 def solution() -> Solution:
     return Solution()

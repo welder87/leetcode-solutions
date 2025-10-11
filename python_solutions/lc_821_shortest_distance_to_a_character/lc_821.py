@@ -25,3 +25,30 @@ class Solution:
         for i in range(left):
             ans[i] = left - i
         return ans
+
+    def shortestToCharV1(self, s: str, c: str) -> list[int]:
+        # Time complexity: O(2*n). Space complexity: O(n).
+        #  Solution: https://algo.monster/liteproblems/821
+        n = len(s)
+        # Initialize result array with maximum possible distance
+        result = [n] * n
+        # First pass: left to right
+        # Track the most recent position of character c seen so far
+        prev_c_position = float("-inf")
+        for i in range(n):
+            if s[i] == c:
+                # Update the position of the most recent c
+                prev_c_position = i
+            # Calculate distance from current position to previous c
+            result[i] = min(result[i], i - prev_c_position)
+        # Second pass: right to left
+        # Track the most recent position of character c seen from the right
+        next_c_position = float("inf")
+        for i in range(n - 1, -1, -1):
+            if s[i] == c:
+                # Update the position of the most recent c from right
+                next_c_position = i
+            # Calculate distance from current position to next c
+            # and keep the minimum distance
+            result[i] = min(result[i], next_c_position - i)
+        return result
