@@ -1,3 +1,6 @@
+import itertools
+
+
 class Solution:
     def isLongPressedName(self, name: str, typed: str) -> bool:
         # Time complexity: O(n + m). Space complexity: O(1).
@@ -14,3 +17,13 @@ class Solution:
             if counter1 > counter2:
                 return False
         return i == len(name) and j == len(typed)
+
+    def isLongPressedNameV1(self, name, typed):
+        # Time complexity: O(n + m). Space complexity: O(n + m).
+        # Solution: https://leetcode.com/problems/long-pressed-name/editorial/
+        g1 = [(k, len(list(grp))) for k, grp in itertools.groupby(name)]
+        g2 = [(k, len(list(grp))) for k, grp in itertools.groupby(typed)]
+        if len(g1) != len(g2):
+            return False
+
+        return all(k1 == k2 and v1 <= v2 for (k1, v1), (k2, v2) in zip(g1, g2))

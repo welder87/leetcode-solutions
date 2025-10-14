@@ -29,6 +29,11 @@ def test_success_v0(name: str, typed: str, ans: bool, solution: Solution):
     assert solution.isLongPressedName(name, typed) is ans
 
 
+@pytest.mark.parametrize(("name", "typed", "ans"), test_cases)
+def test_success_v1(name: str, typed: str, ans: bool, solution: Solution):
+    assert solution.isLongPressedNameV1(name, typed) is ans
+
+
 @pytest.fixture
 def solution() -> Solution:
     return Solution()
