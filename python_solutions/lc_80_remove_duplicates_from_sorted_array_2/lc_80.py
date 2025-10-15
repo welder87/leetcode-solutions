@@ -28,3 +28,21 @@ class Solution:
             if j < len(nums):
                 nums[i], nums[j] = nums[j], nums[i]
         return len(nums) - counter
+
+    def removeDuplicatesV1(self, nums: list[int]) -> int:
+        # Time complexity: O(n). Space complexity: O(1).
+        # Solution: https://algo.monster/liteproblems/80
+        # Pointer to track the position for the next valid element
+        write_index = 0
+        # Iterate through each element in the array
+        for current_num in nums:
+            # Allow element if:
+            # 1. We have less than 2 elements (write_index < 2), OR
+            # 2. Current element is different from the element 2 positions back
+            if write_index < 2 or current_num != nums[write_index - 2]:
+                # Place the current element at the write position
+                nums[write_index] = current_num
+                # Move write pointer forward
+                write_index += 1
+        # Return the length of the modified array
+        return write_index
