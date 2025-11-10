@@ -28,3 +28,16 @@ func removeDuplicatesV1(nums []int) int {
 	}
 	return i + 1
 }
+
+// Time complexity: O(n). Space complexity: O(1).
+// Solution based on https://algo.monster/liteproblems/80
+func removeDuplicatesV2(nums []int) int {
+	writeIndex := 0
+	for i := range nums {
+		if writeIndex < 1 || nums[i] != nums[writeIndex-1] {
+			nums[writeIndex] = nums[i]
+			writeIndex += 1
+		}
+	}
+	return writeIndex
+}
