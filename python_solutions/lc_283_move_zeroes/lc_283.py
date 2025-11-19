@@ -36,3 +36,23 @@ class Solution:
             elif nums[i] != 0:
                 i += 1
             j += 1
+
+    def moveZeroesV3(self, nums: list[int]) -> None:
+        # Time complexity: O(3n). Space complexity: O(n).
+        # Solution: https://www.geeksforgeeks.org/problems/move-all-zeroes-to-end-of-array0751/1
+        n = len(nums)
+        temp = [0] * n
+        # to keep track of the index in temp[]
+        j = 0
+        # Copy non-zero elements to temp[]
+        for i in range(n):
+            if nums[i] != 0:
+                temp[j] = nums[i]
+                j += 1
+        # Fill remaining positions in temp[] with zeros
+        while j < n:
+            temp[j] = 0
+            j += 1
+        # Copy all the elements from temp[] to arr[]
+        for i in range(n):
+            nums[i] = temp[i]

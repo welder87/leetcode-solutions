@@ -74,6 +74,15 @@ def test_success_v2(nums: list[int], ans: set[int], solution: Solution):
     assert id(nums) == nums_id
 
 
+@pytest.mark.parametrize(("nums", "ans"), test_cases)
+def test_success_v3(nums: list[int], ans: set[int], solution: Solution):
+    nums_id = id(nums)
+    solution.moveZeroesV3(nums)
+    assert nums == ans
+    assert nums == ans
+    assert id(nums) == nums_id
+
+
 @pytest.fixture
 def solution() -> Solution:
     return Solution()
