@@ -56,3 +56,20 @@ class Solution:
         # Copy all the elements from temp[] to arr[]
         for i in range(n):
             nums[i] = temp[i]
+
+    def moveZeroesV4(self, nums: list[int]) -> None:
+        # Time complexity: O(2n). Space complexity: O(1).
+        # Solution: https://www.geeksforgeeks.org/problems/move-all-zeroes-to-end-of-array0751/1
+        # Count of non-zero elements
+        count = 0
+        # If the element is non-zero, replace the element at
+        # index 'count' with this element and increment count
+        for i in range(len(nums)):
+            if nums[i] != 0:
+                nums[count] = nums[i]
+                count += 1
+        # Now all non-zero elements have been shifted to
+        # the front. Make all elements 0 from count to end.
+        while count < len(nums):
+            nums[count] = 0
+            count += 1
