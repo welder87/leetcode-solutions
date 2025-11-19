@@ -73,3 +73,19 @@ class Solution:
         while count < len(nums):
             nums[count] = 0
             count += 1
+
+    def moveZeroesV5(self, nums: list[int]) -> None:
+        # Time complexity: O(n). Space complexity: O(1).
+        # Solution: https://www.geeksforgeeks.org/problems/move-all-zeroes-to-end-of-array0751/1
+        # Solution: https://leetcode.com/problems/move-zeroes/editorial/
+        # Pointer to track the position
+        # for next non-zero element
+        count = 0
+        for i in range(len(nums)):
+            # If the current element is non-zero
+            if nums[i] != 0:
+                # Swap the current element with
+                # the 0 at index 'count'
+                nums[i], nums[count] = nums[count], nums[i]
+                # Move 'count' pointer to the next position
+                count += 1

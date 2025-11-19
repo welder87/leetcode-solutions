@@ -86,7 +86,16 @@ def test_success_v3(nums: list[int], ans: set[int], solution: Solution):
 @pytest.mark.parametrize(("nums", "ans"), test_cases)
 def test_success_v4(nums: list[int], ans: set[int], solution: Solution):
     nums_id = id(nums)
-    solution.moveZeroesV3(nums)
+    solution.moveZeroesV4(nums)
+    assert nums == ans
+    assert nums == ans
+    assert id(nums) == nums_id
+
+
+@pytest.mark.parametrize(("nums", "ans"), test_cases)
+def test_success_v5(nums: list[int], ans: set[int], solution: Solution):
+    nums_id = id(nums)
+    solution.moveZeroesV5(nums)
     assert nums == ans
     assert nums == ans
     assert id(nums) == nums_id
