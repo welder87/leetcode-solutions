@@ -56,3 +56,8 @@ class Solution:
         # AND event1 doesn't end before event2 starts
 
         return not (event1[0] > event2[1] or event1[1] < event2[0])
+
+    def haveConflictV2(self, event1: list[str], event2: list[str]) -> bool:
+        # Time complexity: O(1). Space complexity: O(1).
+        # Solution: https://rutube.ru/video/bf8a2ceb596586bdf3f9c10d56e4e927/.
+        return max(event1[0], event2[0]) <= min(event1[1], event2[1])

@@ -66,6 +66,16 @@ def test_success_v1(
     assert ans == solution.haveConflictV1(event1, event2)
 
 
+@pytest.mark.parametrize(("event1", "event2", "ans"), test_cases)
+def test_success_v2(
+    event1: list[str],
+    event2: list[str],
+    ans: bool,
+    solution: Solution,
+):
+    assert ans == solution.haveConflictV2(event1, event2)
+
+
 @pytest.fixture
 def solution() -> Solution:
     return Solution()
