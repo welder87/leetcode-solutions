@@ -9,6 +9,10 @@ func TestMerge(t *testing.T) {
 	testMerge(t, merge)
 }
 
+func TestMergeV1(t *testing.T) {
+	testMerge(t, mergeV1)
+}
+
 func testMerge(t *testing.T, fn func([][]int) [][]int) {
 	testCases := []struct {
 		name      string
