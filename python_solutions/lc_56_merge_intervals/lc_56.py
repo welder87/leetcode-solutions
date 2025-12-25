@@ -15,3 +15,19 @@ class Solution:
                 intermediate = intervals[i]
         ans.append(intermediate)
         return ans
+
+    def mergeV1(self, intervals: list[list[int]]) -> list[list[int]]:
+        # Time complexity: O(n log n). Space complexity: O(n).
+        # Solution: https://leetcode.com/problems/merge-intervals/editorial/
+        intervals.sort(key=lambda x: x[0])
+        merged = []
+        for interval in intervals:
+            # if the list of merged intervals is empty or if the current
+            # interval does not overlap with the previous, simply append it.
+            if not merged or merged[-1][1] < interval[0]:
+                merged.append(interval)
+            else:
+                # otherwise, there is overlap, so we merge the current and previous
+                # intervals.
+                merged[-1][1] = max(merged[-1][1], interval[1])
+        return merged
