@@ -40,3 +40,26 @@ func mergeV1(intervals [][]int) [][]int {
 	}
 	return merged
 }
+
+// Time complexity: O(n log n). Space complexity: O(n log n).
+// avoiding unnecessary allocations when creating subarrays
+func mergeV2(intervals [][]int) [][]int {
+	sort.Slice(intervals, func(i, j int) bool {
+		return intervals[i][0] < intervals[j][0]
+	})
+	ans := make([][]int, 0, len(intervals))
+	intermediate := intervals[0]
+	for i := 1; i < len(intervals); i++ {
+		start := max(intermediate[0], intervals[i][0])
+		end := min(intermediate[1], intervals[i][1])
+		if start <= end {
+			intermediate[0] = min(intermediate[0], intervals[i][0])
+			intermediate[1] = max(intermediate[1], intervals[i][1])
+		} else {
+			ans = append(ans, intermediate)
+			intermediate = intervals[i]
+		}
+	}
+	ans = append(ans, intermediate)
+	return ans
+}
