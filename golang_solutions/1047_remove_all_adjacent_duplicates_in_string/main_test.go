@@ -16,6 +16,10 @@ func TestRemoveDuplicatesV2(t *testing.T) {
 	testRemoveDuplicates(t, removeDuplicatesV2)
 }
 
+func TestRemoveDuplicatesV3(t *testing.T) {
+	testRemoveDuplicates(t, removeDuplicatesV3)
+}
+
 func testRemoveDuplicates(t *testing.T, fn func(string) string) {
 	testCases := []struct {
 		name string
