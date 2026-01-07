@@ -7,7 +7,12 @@ import (
 func TestMinimizedStringLength(t *testing.T) {
 	testMinimizedStringLength(t, minimizedStringLength)
 }
+
 func TestMinimizedStringLengthV1(t *testing.T) {
+	testMinimizedStringLength(t, minimizedStringLengthV1)
+}
+
+func TestMinimizedStringLengthV2(t *testing.T) {
 	testMinimizedStringLength(t, minimizedStringLengthV1)
 }
 
