@@ -26,3 +26,19 @@ func removeStarsV1(s string) string {
 	}
 	return string(stack)
 }
+
+// Time complexity: O(n + m). Space complexity: O(n + m).
+// Solution: https://leetcode.com/problems/removing-stars-from-a-string/solutions/7374826/simple-golang-solution-by-srgleq-ju43/
+func removeStarsV2(s string) string {
+	rn := make([]rune, len(s))
+	idx := 0
+	for _, r := range s {
+		if r != '*' {
+			rn[idx] = r
+			idx++
+		} else {
+			idx--
+		}
+	}
+	return string(rn[:idx])
+}

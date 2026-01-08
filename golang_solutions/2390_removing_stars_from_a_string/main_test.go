@@ -12,6 +12,10 @@ func TestRemoveStarsV1(t *testing.T) {
 	testRemoveStars(t, removeStarsV1)
 }
 
+func TestRemoveStarsV2(t *testing.T) {
+	testRemoveStars(t, removeStarsV2)
+}
+
 func testRemoveStars(t *testing.T, fn func(string) string) {
 	testCases := []struct {
 		name string
