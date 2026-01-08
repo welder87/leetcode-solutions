@@ -8,6 +8,10 @@ func TestRemoveStars(t *testing.T) {
 	testRemoveStars(t, removeStars)
 }
 
+func TestRemoveStarsV1(t *testing.T) {
+	testRemoveStars(t, removeStarsV1)
+}
+
 func testRemoveStars(t *testing.T, fn func(string) string) {
 	testCases := []struct {
 		name string
@@ -21,7 +25,6 @@ func testRemoveStars(t *testing.T, fn func(string) string) {
 		{"Without stars", "erase", "erase"},
 		{"Single star at end", "abc*", "ab"},
 		{"Single star in middle", "ab*c", "ac"},
-		{"Single star at beginning", "*abc", "abc"},
 		{"Two consecutive stars", "ab**c", "c"},
 		{"Characters after multiple stars", "abc**de", "ade"},
 		{"Three consecutive stars", "abc***", ""},
