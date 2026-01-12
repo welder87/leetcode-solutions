@@ -9,6 +9,10 @@ func TestClearDigits(t *testing.T) {
 	testClearDigits(t, clearDigits)
 }
 
+func TestClearDigitsV1(t *testing.T) {
+	testClearDigits(t, clearDigitsV1)
+}
+
 func testClearDigits(t *testing.T, fn func(string) string) {
 	testCases := []struct {
 		name string

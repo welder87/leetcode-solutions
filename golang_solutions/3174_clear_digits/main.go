@@ -14,3 +14,17 @@ func clearDigits(s string) string {
 	}
 	return string(ans)
 }
+
+// Time complexity: O(n+m). Space complexity: O(n+m).
+// Solution: https://leetcode.doocs.org/en/lc/3174.
+func clearDigitsV1(s string) string {
+	stk := []byte{}
+	for i := range s {
+		if s[i] >= '0' && s[i] <= '9' {
+			stk = stk[:len(stk)-1]
+		} else {
+			stk = append(stk, s[i])
+		}
+	}
+	return string(stk)
+}
