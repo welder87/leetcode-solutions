@@ -8,6 +8,10 @@ func TestDetectCapitalUse(t *testing.T) {
 	testDetectCapitalUse(t, detectCapitalUse)
 }
 
+func TestDetectCapitalUseV1(t *testing.T) {
+	testDetectCapitalUse(t, detectCapitalUseV1)
+}
+
 func testDetectCapitalUse(t *testing.T, fn func(string) bool) {
 	testCases := []struct {
 		name string
