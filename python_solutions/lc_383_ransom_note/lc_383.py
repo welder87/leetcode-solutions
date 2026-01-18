@@ -16,3 +16,13 @@ class Solution:
             else:
                 return False
         return True
+
+    def canConstructV1(self, ransomNote: str, magazine: str) -> bool:
+        # Time complexity: O(n + m). Space complexity: O(k).
+        # Solution: https://leetcode.doocs.org/en/lc/383
+        cnt = Counter(magazine)
+        for c in ransomNote:
+            cnt[c] -= 1
+            if cnt[c] < 0:
+                return False
+        return True

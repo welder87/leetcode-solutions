@@ -35,6 +35,11 @@ def test_success_v0(ransom_note: str, magazine: str, ans: bool, solution: Soluti
     assert ans is solution.canConstruct(ransom_note, magazine)
 
 
+@pytest.mark.parametrize(("ransom_note", "magazine", "ans"), test_cases)
+def test_success_v1(ransom_note: str, magazine: str, ans: bool, solution: Solution):
+    assert ans is solution.canConstructV1(ransom_note, magazine)
+
+
 @pytest.fixture
 def solution() -> Solution:
     return Solution()
