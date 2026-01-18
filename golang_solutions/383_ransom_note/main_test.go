@@ -8,6 +8,10 @@ func TestCanConstruct(t *testing.T) {
 	testCanConstruct(t, canConstruct)
 }
 
+func TestCanConstructV1(t *testing.T) {
+	testCanConstruct(t, canConstructV1)
+}
+
 func testCanConstruct(t *testing.T, fn func(string, string) bool) {
 	testCases := []struct {
 		name       string
