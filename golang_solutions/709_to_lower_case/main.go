@@ -18,3 +18,16 @@ func toLowerCase(s string) string {
 func toLowerCaseV1(s string) string {
 	return strings.ToLower(s)
 }
+
+// Time complexity: O(n + m). Space complexity: O(n + m).
+// https://leetcode.com/problems/to-lower-case/solutions/7249092/simple-golang-solution-beats-100-by-srgl-jy2b/
+func toLowerCaseV2(s string) string {
+	res := make([]rune, len(s))
+	for i, r := range s {
+		res[i] = r
+		if r <= 'Z' && r >= 'A' {
+			res[i] = rune(r + 32)
+		}
+	}
+	return string(res)
+}

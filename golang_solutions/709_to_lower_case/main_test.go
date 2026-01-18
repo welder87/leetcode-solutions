@@ -13,6 +13,10 @@ func TestToLowerCaseV1(t *testing.T) {
 	testToLowerCase(t, toLowerCaseV1)
 }
 
+func TestToLowerCaseV2(t *testing.T) {
+	testToLowerCase(t, toLowerCaseV2)
+}
+
 func testToLowerCase(t *testing.T, fn func(string) string) {
 	testCases := []struct {
 		name string
