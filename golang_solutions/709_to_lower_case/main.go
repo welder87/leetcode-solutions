@@ -20,6 +20,7 @@ func toLowerCaseV1(s string) string {
 }
 
 // Time complexity: O(n + m). Space complexity: O(n + m).
+// Solution:
 // https://leetcode.com/problems/to-lower-case/solutions/7249092/simple-golang-solution-beats-100-by-srgl-jy2b/
 func toLowerCaseV2(s string) string {
 	res := make([]rune, len(s))
@@ -30,4 +31,16 @@ func toLowerCaseV2(s string) string {
 		}
 	}
 	return string(res)
+}
+
+// Time complexity: O(n + m). Space complexity: O(n + m).
+// Solution: https://leetcode.doocs.org/en/lc/709
+func toLowerCaseV3(s string) string {
+	cs := []byte(s)
+	for i, c := range cs {
+		if c >= 'A' && c <= 'Z' {
+			cs[i] |= 32
+		}
+	}
+	return string(cs)
 }
