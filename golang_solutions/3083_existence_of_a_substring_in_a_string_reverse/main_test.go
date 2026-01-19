@@ -8,6 +8,10 @@ func TestIsSubstringPresent(t *testing.T) {
 	testIsSubstringPresent(t, isSubstringPresent)
 }
 
+func TestIsSubstringPresentV1(t *testing.T) {
+	testIsSubstringPresent(t, isSubstringPresentV1)
+}
+
 func testIsSubstringPresent(t *testing.T, fn func(string) bool) {
 	testCases := []struct {
 		s    string
