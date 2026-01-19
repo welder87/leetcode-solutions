@@ -43,6 +43,11 @@ def test_success_v2(s: str, ans: bool, solution: Solution):
     assert solution.isSubstringPresentV2(s) is ans
 
 
+@pytest.mark.parametrize(("s", "ans"), test_cases)
+def test_success_v3(s: str, ans: bool, solution: Solution):
+    assert solution.isSubstringPresentV3(s) is ans
+
+
 @pytest.fixture
 def solution() -> Solution:
     return Solution()

@@ -34,3 +34,10 @@ class Solution:
             if pair in counter:
                 return True
         return False
+
+    def isSubstringPresentV3(self, s: str) -> bool:
+        # Time complexity: O(n + n). Space complexity: O(m).
+        # Method: Pair As Tuple + Itertools Builtins
+        # Solution: https://leetcode.doocs.org/en/lc/3083/
+        st = {(a, b) for a, b in itertools.pairwise(s[::-1])}
+        return any((a, b) in st for a, b in itertools.pairwise(s))
