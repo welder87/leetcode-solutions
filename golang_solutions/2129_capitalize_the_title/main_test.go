@@ -9,6 +9,10 @@ func TestCapitalizeTitle(t *testing.T) {
 	testCapitalizeTitle(t, capitalizeTitle)
 }
 
+func TestCapitalizeTitleV1(t *testing.T) {
+	testCapitalizeTitle(t, capitalizeTitleV1)
+}
+
 func testCapitalizeTitle(t *testing.T, fn func(string) string) {
 	testCases := []struct {
 		s    string
