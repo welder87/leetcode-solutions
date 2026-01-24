@@ -21,3 +21,10 @@ class Solution:
         return " ".join(
             word.title() if len(word) > 2 else word.lower() for word in title.split(" ")
         )
+
+    def capitalizeTitleV2(self, title: str) -> str:
+        # Time complexity O(n + n + n)
+        # Space complexity O(n + n + n)
+        # Solution: https://leetcode.doocs.org/en/lc/2129
+        words = [w.lower() if len(w) < 3 else w.capitalize() for w in title.split()]
+        return " ".join(words)
