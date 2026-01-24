@@ -56,6 +56,11 @@ def test_success_v0(s: str, ans: str, solution: Solution):
     assert solution.capitalizeTitle(s) == ans
 
 
+@pytest.mark.parametrize(("s", "ans"), test_cases)
+def test_success_v1(s: str, ans: str, solution: Solution):
+    assert solution.capitalizeTitleV1(s) == ans
+
+
 @pytest.fixture
 def solution() -> Solution:
     return Solution()

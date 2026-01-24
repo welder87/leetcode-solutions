@@ -14,3 +14,10 @@ class Solution:
         if len(ans) - start > 2:
             ans[start] = ans[start].upper()
         return "".join(ans)
+
+    def capitalizeTitleV1(self, title: str) -> str:
+        # Time complexity O(n + n + n)
+        # Space complexity O(n + n + n)
+        return " ".join(
+            word.title() if len(word) > 2 else word.lower() for word in title.split(" ")
+        )
