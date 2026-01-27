@@ -9,6 +9,10 @@ func TestScoreOfString(t *testing.T) {
 	testScoreOfString(t, scoreOfString)
 }
 
+func TestScoreOfStringV1(t *testing.T) {
+	testScoreOfString(t, scoreOfStringV1)
+}
+
 func testScoreOfString(t *testing.T, fn func(string) int) {
 	testCases := []struct {
 		s    string

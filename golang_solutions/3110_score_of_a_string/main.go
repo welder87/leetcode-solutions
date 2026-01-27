@@ -15,3 +15,19 @@ func abs(x rune) int {
 	}
 	return int(x)
 }
+
+// Time complexity: O(n). Space complexity: O(1).
+// Solution: https://leetcode.doocs.org/en/lc/3110/
+func scoreOfStringV1(s string) (ans int) {
+	for i := 1; i < len(s); i++ {
+		ans += absV1(int(s[i-1]) - int(s[i]))
+	}
+	return
+}
+
+func absV1(x int) int {
+	if x < 0 {
+		return -x
+	}
+	return x
+}
