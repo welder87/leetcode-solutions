@@ -27,3 +27,13 @@ class Solution:
                     ans = ans[:j]
                     break
         return "".join(ans)
+
+    def longestCommonPrefixV2(self, strs: list[str]) -> str:
+        # Time complexity: O(sum(char)). Space complexity: O(1).
+        ans = strs[0]
+        for i in range(1, len(strs)):
+            for j, (first, second) in enumerate(zip_longest(strs[i], ans)):
+                if first != second:
+                    ans = ans[:j]
+                    break
+        return ans
