@@ -13,6 +13,10 @@ func TestLongestCommonPrefixV1(t *testing.T) {
 	testLongestCommonPrefix(t, longestCommonPrefixV1)
 }
 
+func TestLongestCommonPrefixV2(t *testing.T) {
+	testLongestCommonPrefix(t, longestCommonPrefixV2)
+}
+
 func testLongestCommonPrefix(t *testing.T, fn func([]string) string) {
 	testCases := []struct {
 		strs []string
