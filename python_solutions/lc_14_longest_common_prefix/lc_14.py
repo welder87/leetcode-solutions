@@ -37,3 +37,17 @@ class Solution:
                     ans = ans[:j]
                     break
         return ans
+
+    def longestCommonPrefixV3(self, strs: list[str]) -> str:
+        # Time complexity: O(sum(char)). Space complexity: O(1).
+        # Method: Horizontal scanning
+        # Solution: https://leetcode.com/problems/longest-common-prefix/editorial/#approach-1-horizontal-scanning
+        if len(strs) == 0:
+            return ""
+        prefix = strs[0]
+        for i in range(1, len(strs)):
+            while strs[i].find(prefix) != 0:
+                prefix = prefix[0 : len(prefix) - 1]
+                if prefix == "":
+                    return ""
+        return prefix

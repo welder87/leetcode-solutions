@@ -57,6 +57,11 @@ def test_success_v2(strs: list[str], ans: str, solution: Solution):
     assert ans == solution.longestCommonPrefixV2(strs)
 
 
+@pytest.mark.parametrize(("strs", "ans"), test_cases)
+def test_success_v3(strs: list[str], ans: str, solution: Solution):
+    assert ans == solution.longestCommonPrefixV3(strs)
+
+
 @pytest.fixture
 def solution() -> Solution:
     return Solution()
