@@ -76,6 +76,11 @@ def test_success_v0(pattern: str, s: str, ans: bool, solution: Solution):
     assert solution.wordPattern(pattern, s) == ans
 
 
+@pytest.mark.parametrize(("pattern", "s", "ans"), test_cases)
+def test_success_v1(pattern: str, s: str, ans: bool, solution: Solution):
+    assert solution.wordPattern(pattern, s) == ans
+
+
 @pytest.fixture
 def solution() -> Solution:
     return Solution()

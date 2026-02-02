@@ -17,3 +17,19 @@ class Solution:
             if existing_word != word or existing_char != char:
                 return False
         return True
+
+    def wordPatternV1(self, pattern: str, s: str) -> bool:
+        # Time complexity O(sum(char)) + O(sum(char))
+        # Space complexity O(m + k + p)
+        # Solution: https://leetcode.doocs.org/en/lc/290
+        ws = s.split()
+        if len(pattern) != len(ws):
+            return False
+        d1 = {}
+        d2 = {}
+        for a, b in zip(pattern, ws):
+            if (a in d1 and d1[a] != b) or (b in d2 and d2[b] != a):
+                return False
+            d1[a] = b
+            d2[b] = a
+        return True
