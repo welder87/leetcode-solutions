@@ -74,6 +74,11 @@ def test_success_v0(words: list[str], k: int, ans: list[str], solution: Solution
     assert solution.topKFrequent(words, k) == ans
 
 
+@pytest.mark.parametrize(("words", "k", "ans"), test_cases)
+def test_success_v1(words: list[str], k: int, ans: list[str], solution: Solution):
+    assert solution.topKFrequentV1(words, k) == ans
+
+
 @pytest.fixture
 def solution() -> Solution:
     return Solution()
