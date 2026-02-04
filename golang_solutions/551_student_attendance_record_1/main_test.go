@@ -8,6 +8,10 @@ func TestCheckRecord(t *testing.T) {
 	testCheckRecord(t, checkRecord)
 }
 
+func TestCheckRecordV1(t *testing.T) {
+	testCheckRecord(t, checkRecordV1)
+}
+
 func testCheckRecord(t *testing.T, fn func(string) bool) {
 	testCases := []struct {
 		s    string

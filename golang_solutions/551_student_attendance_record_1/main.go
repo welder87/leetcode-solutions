@@ -1,5 +1,7 @@
 package problem551
 
+import "strings"
+
 // Time complexity: O(n). Space complexity: O(1).
 func checkRecord(s string) bool {
 	counterA, counterL, i := 0, 0, 0
@@ -19,4 +21,11 @@ func checkRecord(s string) bool {
 		i = j
 	}
 	return counterA < 2 && counterL < 3
+}
+
+// Time complexity: O(n + n). Space complexity: O(1).
+// Method: builtins.
+// Solution: https://leetcode.doocs.org/en/lc/551 .
+func checkRecordV1(s string) bool {
+	return strings.Count(s, "A") < 2 && !strings.Contains(s, "LLL")
 }
