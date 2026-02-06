@@ -9,6 +9,10 @@ func TestFirstUniqChar(t *testing.T) {
 	testFirstUniqChar(t, firstUniqChar)
 }
 
+func TestFirstUniqCharV1(t *testing.T) {
+	testFirstUniqChar(t, firstUniqCharV1)
+}
+
 func testFirstUniqChar(t *testing.T, fn func(string) int) {
 	testCases := []struct {
 		strs string
