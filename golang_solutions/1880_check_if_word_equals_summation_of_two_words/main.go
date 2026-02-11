@@ -14,3 +14,15 @@ func calcNum(word string) rune {
 	}
 	return num
 }
+
+// Time complexity: O(n + m + k). Space complexity: O(1).
+// Solution: https://leetcode.doocs.org/en/lc/1880
+func isSumEqualV1(firstWord string, secondWord string, targetWord string) bool {
+	f := func(s string) (ans int) {
+		for _, c := range s {
+			ans = ans*10 + int(c-'a')
+		}
+		return
+	}
+	return f(firstWord)+f(secondWord) == f(targetWord)
+}

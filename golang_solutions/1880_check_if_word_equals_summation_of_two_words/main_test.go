@@ -10,6 +10,10 @@ func TestIsSumEqual(t *testing.T) {
 	testIsSumEqual(t, isSumEqual)
 }
 
+func TestIsSumEqualV1(t *testing.T) {
+	testIsSumEqual(t, isSumEqualV1)
+}
+
 func testIsSumEqual(t *testing.T, fn func(string, string, string) bool) {
 	testCases := []struct {
 		firstWord  string
