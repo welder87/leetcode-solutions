@@ -57,6 +57,11 @@ def test_success_v0(first: str, second: str, target: str, ans: int, solution: So
     assert solution.isSumEqual(first, second, target) is ans
 
 
+@pytest.mark.parametrize(("first", "second", "target", "ans"), test_cases)
+def test_success_v1(first: str, second: str, target: str, ans: int, solution: Solution):
+    assert solution.isSumEqual(first, second, target) is ans
+
+
 @pytest.fixture
 def solution() -> Solution:
     return Solution()
