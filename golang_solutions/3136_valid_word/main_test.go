@@ -9,6 +9,10 @@ func TestIsValid(t *testing.T) {
 	testIsValid(t, isValid)
 }
 
+func TestIsValidV1(t *testing.T) {
+	testIsValid(t, isValidV1)
+}
+
 func testIsValid(t *testing.T, fn func(string) bool) {
 	testCases := []struct {
 		s    string
