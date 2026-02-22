@@ -67,6 +67,11 @@ def test_success_v0(s: str, ans: bool, solution: Solution):
     assert ans is solution.isValid(s)
 
 
+@pytest.mark.parametrize(("s", "ans"), test_cases)
+def test_success_v1(s: str, ans: bool, solution: Solution):
+    assert ans is solution.isValidV1(s)
+
+
 @pytest.fixture
 def solution() -> Solution:
     return Solution()
