@@ -155,7 +155,57 @@ func reverse(nums []int, l int, r int) {
 
 ## Floating window
 
+```go
+// Два цикла
+func floatingWindowPattern(nums []int) ... {
+    i, j := 0, 0
+    for j < len(nums) {
+        for j < len(nums) && condition {
+            j++
+        }
+        // действия
+        ...
+        i = j
+    }
+}
+```
+
+```go
+// Модификация двух циклов
+func floatingWindowPattern(nums []int) ... {
+    i, j := 0, 1
+    for i < len(nums) {
+        for j < len(nums) && condition {
+            j++
+        }
+        // действия
+        ...
+        i = j
+        j++
+    }
+}
+```
+
+```go
+// метод слияния двух отсортированных массивов (ИТМО)
+func floatingWindowPattern(nums []int) ... {
+    i, j := 0, 0
+    for i < len(nums) || j < len(nums)  {
+        if j == len(nums) || i < len(nums) && condition {
+            // действия
+            i++
+        } else {
+            // действия
+            j++
+        }
+    }
+}
+```
+
+Примеры задач
+
 - [3](3.md)
+- [228](228.md)
 - [674](674.md)
 
 Примеры задач
