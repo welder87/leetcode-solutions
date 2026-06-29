@@ -153,7 +153,7 @@ func reverse(nums []int, l int, r int) {
 
 - [287](287.md)
 
-## Floating window
+## Sliding (Floating) Window
 
 ```go
 // Два цикла
@@ -206,19 +206,11 @@ func floatingWindowPattern(nums []int) ... {
 
 - [3](3.md)
 - [228](228.md)
+- [485](485.md)
 - [674](674.md)
-
-Примеры задач
-
 - [1984](1984.md)
 - [2144](2144.md)
-
-## Sliding Window
-
-Примеры задач
-
-- [1984](1984.md)
-- [2144](2144.md)
+- [2405](2405.md)
 
 ## Prefix Sum
 
@@ -261,3 +253,10 @@ func prefixSumPattern(nums []int) {
 - [1991](1991.md)
 - [2270](2270.md)
 - [2574](2574.md)
+
+## Bit Mask
+
+Примеры задач
+
+- [3](3.md)
+- [2405](2405.md)
