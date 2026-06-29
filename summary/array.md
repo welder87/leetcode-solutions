@@ -206,6 +206,7 @@ func floatingWindowPattern(nums []int) ... {
 
 - [3](3.md)
 - [228](228.md)
+- [443](443.md)
 - [485](485.md)
 - [674](674.md)
 - [1984](1984.md)
