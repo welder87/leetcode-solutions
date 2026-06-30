@@ -81,6 +81,11 @@ func largestElement(arr []int) int {
 }
 ```
 
+Примеры задач
+
+- [414](414.md)
+- [1464](1464.md)
+
 ### Two pointers (Обобщенный)
 
 ### Two pointers. Навстречу друг другу с двух концов
