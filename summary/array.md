@@ -34,6 +34,7 @@ var zero_rune rune
 - [674](674.md)
 - [1446](1446.md)
 - [1984](1984.md)
+- [2733](2733.md)
 
 ### Slice[n:] Only Go
 
@@ -86,6 +87,30 @@ func largestElement(arr []int) int {
 
 - [414](414.md)
 - [1464](1464.md)
+- [2733](2733.md)
+
+### Second Max value (Second Min value)
+
+```go
+func firstSecondMaximum(nums []int) (int, int) {
+    // тут обязательно Sentinel Value в зависимости от задачи
+    first, second := -1, -1
+    for _, num := range nums {
+        if first < num {
+            second, first = first, num
+        } else {
+            second = max(second, num)
+        }
+    }
+    return first, second
+}
+```
+
+Примеры задач
+
+- [414](414.md)
+- [1464](1464.md)
+- [2733](2733.md)
 
 ### Two pointers (Обобщенный)
 
